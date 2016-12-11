@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="nav-content">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" ng-bind="::vm.labelService.labels.header.brandName"></a>
+                <div class="pull-right mob-menu visible-xs">
+                    <a ui-sref="shop"><span><i class="fa fa-shopping-bag"></i></span></a>
+                    <a ui-sref="contact"><span><i class="fa fa-address-card"></i></span></a>
+                    <a ui-sref="cart"><span class="cartmob" data-cartcount="{{vm.cart.length || ''}}"><i class="fa fa-shopping-cart"></i></span></a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ng-repeat="item in ::vm.labelService.labels.header.items" class="{{::item.class}}" data-cartcount="({{vm.cart.length}})"><a ui-sref="{{::item.state}}" ng-bind="::item.label"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

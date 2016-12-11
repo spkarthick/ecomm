@@ -1,0 +1,61 @@
+{
+    "header": {
+        "items": {
+            "shop": {
+                "label": "shop",
+                "state": "shop"
+            },
+            "contact": {
+                "label": "contact",
+                "state": "contact"
+            },
+            "cart": {
+                "label": "cart",
+                "state": "cart",
+                "class": "fa fa-shopping-cart cartItem"
+            },
+            "checkout": {
+                "label": "checkout",
+                "state": "checkout"
+            }
+        },
+        "logo": "",
+        "brandName": "Pentagrit"
+    },
+    "bannerImage": "../../common/images/cover.jpg",
+    "contactBannerImage": "../../common/images/contact.jpg",
+    "introTitle": "What you can get?",
+    "introDesc": "We have flexible plans whether you are subscribing for the office or for yourself",
+    "featuredProductsTitle": "Our Plans",
+    "buyNowButton": "I want this!",
+    "productBuyNow": "Buy Now",
+    "productUpdateNow": "Update",
+    "jumbotrons": [
+        
+        {
+            "title": "Our Story and Mission",
+            "desc": "Finding a way to serve eachother accross the world.",
+            "items": [
+                
+            {
+                "image": "../../common/images/charity.jpg",
+                "desc": "<img src='../../common/images/help.png' alt=''><p>For every coffee bag we send to you, we will donate 10% of our profits to a charity of your choice.</p><p>We believe in paying it forward to those in need. Money should never be a concernt to those who need it. Our team goes out to Africa every year to build houses. Check out the about page to learn more about our trip to Africa!</p>"
+            },
+                
+            {
+                "image": "../../common/images/charity.jpg",
+                "desc": "<img src='../../common/images/help.png' alt=''><p>For every coffee bag we send to you, we will donate 10% of our profits to a charity of your choice.</p><p>We believe in paying it forward to those in need. Money should never be a concernt to those who need it. Our team goes out to Africa every year to build houses. Check out the about page to learn more about our trip to Africa!</p>"
+            }
+            
+            ]
+        }
+    
+    ],
+    "itemInCart": "Item already in cart, you can update the quantity here.",
+    "knowUs": "Get to know us more",
+    "socialLinks": {
+        "facebook": "https://www.facebook.com/people/Pentagrit/100008640930070",
+        "twitter": "https://twitter.com/pentagrit",
+        "linkedin": "https://www.linkedin.com/company/pentagrit"
+    }
+}

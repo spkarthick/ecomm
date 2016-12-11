@@ -1,0 +1,74 @@
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #f1f1f1;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+    padding: 20px 0;
+}
+header {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+}
+.nav-content {
+    max-width: 1411px;
+    margin: 0 auto;
+}
+.cartmob::before {
+    content: attr(data-cartcount)
+}
+ul.nav.navbar-nav li a {
+    border-bottom: 1px solid transparent;
+}
+
+ul.nav.navbar-nav li a:hover {
+    color: #333;
+    border-color: #333;
+}
+
+.banner {
+    height: 600px;
+}
+
+.cartItem {
+    width: 65px;
+    text-align: center;
+}
+
+.cartItem a, .cartItem::after {
+    font-family: 'Lato', sans-serif;
+    color: #777; 
+}
+
+.mob-menu a, .mob-menu a:focus, .mob-menu a:active {
+    color:#777;
+    text-decoration: none;
+}
+.mob-menu {
+    margin-top: 8px;
+    font-size: 25px;
+    color: #777;
+}
+.mob-menu span {
+    margin-right: 25px;
+}
+.cartItem::before {
+    position: absolute;
+    top: 19px;
+    left: 0px;
+}
+.cartItem::after {
+    position: absolute;
+    top: 20px;
+    right: 2px;
+    content: attr(data-cartcount);
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 300px;
+    }
+}

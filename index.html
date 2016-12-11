@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>  
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="lib/angular-animate-css/build/nga.all.min.css">
+    <link rel="stylesheet" href="app.css">
+
+    <!-- Header Component -->
+    <link rel="stylesheet" href="components/header/header.css">
+    <script src="components/header/header.js"></script>
+    <script src="components/header/header.service.js"></script>
+    <script src="components/header/header.controller.js"></script>
+    <script src="components/header/header.component.js"></script>
+    <!-- Header Component End -->
+    
+    <!-- Footer Component -->
+    <link rel="stylesheet" href="components/footer/footer.css">
+    <script src="components/footer/footer.js"></script>
+    <script src="components/footer/footer.service.js"></script>
+    <script src="components/footer/footer.controller.js"></script>
+    <script src="components/footer/footer.component.js"></script>
+    <!-- Footer Component End -->
+
+    <!-- Home Component -->
+    <link rel="stylesheet" href="components/home/home.css">
+    <script src="components/home/home.js"></script>
+    <script src="components/home/home.service.js"></script>
+    <script src="components/home/home.controller.js"></script>
+    <script src="components/home/home.component.js"></script>
+    <!-- Home Component End -->
+    
+    <!-- Product Details Component -->
+    <link rel="stylesheet" href="components/productDetails/productDetails.css">
+    <script src="components/productDetails/productDetails.js"></script>
+    <script src="components/productDetails/productDetails.service.js"></script>
+    <script src="components/productDetails/productDetails.controller.js"></script>
+    <script src="components/productDetails/productDetails.component.js"></script>
+    <!-- Product Details Component End -->
+    
+    <!-- Shop Component -->
+    <link rel="stylesheet" href="components/shop/shop.css">
+    <script src="components/shop/shop.js"></script>
+    <script src="components/shop/shop.service.js"></script>
+    <script src="components/shop/shop.controller.js"></script>
+    <script src="components/shop/shop.component.js"></script>
+    <!-- Shop Component End -->
+    
+    <!-- Contact Component -->
+    <link rel="stylesheet" href="components/contact/contact.css">
+    <script src="components/contact/contact.js"></script>
+    <script src="components/contact/contact.service.js"></script>
+    <script src="components/contact/contact.controller.js"></script>
+    <script src="components/contact/contact.component.js"></script>
+    <!-- Contact Component End -->
+    
+    <!-- Cart Component -->
+    <link rel="stylesheet" href="components/cart/cart.css">
+    <script src="components/cart/cart.js"></script>
+    <script src="components/cart/cart.service.js"></script>
+    <script src="components/cart/cart.controller.js"></script>
+    <script src="components/cart/cart.component.js"></script>
+    <!-- Cart Component End -->
+
+    <script src="app.js"></script>
+    <script src="common/app.directives.js"></script>
+    <script src="common/api.config.js"></script>
+</head>
+<body>
+    <header></header>
+    <div ui-view></div>
+    <footer></footer>
+</body>
+</html>

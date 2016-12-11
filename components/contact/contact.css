@@ -1,0 +1,31 @@
+.full-jumbotron {
+    height: 240px;
+}
+
+.full-jumbotron .contact-title{
+    position: relative;
+    top: 75px;
+    color: #fff;
+}
+
+.full-jumbotron .contact-title h1 {
+    font-size: 45px;
+}
+
+contact {
+    color: #777;
+}
+
+.contact-forms input, .contact-forms textarea {
+    border-radius: 0px;
+    margin: 12px 0px;
+    box-shadow:none!important;
+}
+
+.contact-forms .btn-important.btn {
+    width: 100%;
+}
+
+.contact-forms input:focus, .contact-forms textarea:focus {
+    border-color: #333;
+}

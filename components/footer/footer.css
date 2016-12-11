@@ -1,0 +1,29 @@
+footer {
+	width: 100%;
+	background: #363636;
+	color: #fff;
+	height: 60px;
+	font-size: 16px;
+	line-height: 30px;
+	padding-right: 10px;
+    padding-top: 15px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.social {
+    padding: 0 20px;
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+}
+
+.social-buttons {
+    margin-left: 20px;
+}
+
+.social-buttons a:hover {
+    color: #AFAFAF;
+}

@@ -1,0 +1,95 @@
+.box-default {
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    position: relative;
+}
+.navbar-nav li {
+    margin-left: 20px;
+}
+.box-top .title {
+    position: absolute;
+    top: -15px;
+    background: #fff;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    z-index: 2;
+    font-size: 20px;
+    width: 150px
+}
+.margin-top-50 {
+    margin-top: 50px!important;
+}
+.product {
+    margin: 30px 0px;
+}
+
+.jumbotron {
+    background: #fff;
+    max-width: 1444px;
+    margin: 0 auto;
+}
+
+home h2, home h3 {
+    font-weight: bold;
+}
+
+.onsale p {
+    margin-bottom: 50px;
+}
+
+home *{
+    color: #757575;
+}
+.heading-font {
+    color: #333;
+    opacity: 0.8;
+}
+.onsale {
+    padding-top: 20px;
+}
+.onsale img {
+    width: 70%;
+}
+.jumbotron {
+    padding-bottom: 70px;
+}
+.jumbotron p {
+    font-size: 15px;
+}
+
+.jumbotron p.small {
+    font-size: 14px;
+}
+
+.jumbotron p sub {
+    bottom: 0px;
+}
+
+.padding-30 {
+    padding: 0px 50px;
+}
+
+.btn-important, #btn-important{
+	border:3px solid #494c50;
+	border-radius:0;
+	color:#494c50;
+	margin-top:5px;
+	background:white;
+}
+button.btn:focus, button.btn:active {
+    outline: 0;
+}
+.btn-important:hover{
+	background:#494c50;
+	color:white;
+}
+.about-bar img {
+    width: 100%;
+}
+.box-top {
+    border-top: 1px solid #f1f1f1;
+}
+.mission img {
+    width: 100%;
+}

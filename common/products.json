@@ -1,0 +1,17 @@
+[{
+    "id": "onebag",
+    "name": "One Bag",
+    "image": "../../common/images/single_autox500-jpg-crop.png",
+    "price": 10,
+    "tax": 2,
+    "description": "If you are just buying for yourself, choose your favorite coffee bean and get it delivered monthly. You can change the blend each month if you would like.",
+    "isFeatured": true
+},{
+    "id": "twobag",
+    "name": "Two Bag",
+    "image": "../../common/images/single_autox500-jpg-crop.png",
+    "price": 20,
+    "tax": 4,
+    "description": "If you are just buying for yourself, choose your favorite coffee bean and get it delivered monthly. You can change the blend each month if you would like.",
+    "isFeatured": false
+}]
