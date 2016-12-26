@@ -1,1 +1,53 @@
-<h2>{{vm.name}}</h2>
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12" ng-if="!vm.cart.total_unique_items">
+                <h4 class="magin-top-50" ng-bind="::vm.labelService.labels.emptyCart"></h4>
+                <a ui-sref="shop" ng-bind="::vm.labelService.labels.continueShopping"></a>
+            </div>
+            <div class="col-xs-12 magin-top-50" ng-if="vm.cart.total_unique_items">
+                <h4 ng-bind="::vm.labelService.labels.cartTitle"></h4>
+                <br/>
+                <ul class="list-group">
+                    <li class="list-group-item animate-repeat text-center" ng-repeat="(key, item) in vm.cart.contents">
+                        <i class="fa fa-close" ng-click="vm.removeItem(key)"></i>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="productname">
+                                        <img ng-src="{{::item.images[0].url.https}}" />
+                                        <div class="producttitle" ng-bind="::item.title"></div>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="input-group">
+                                        <span class="input-group-btn" ng-click="vm.updateQuantity(key, item.quantity, 1)">
+                                            <button class="btn btn-default" type="button"><i class="fa fa-plus"></i></button>
+                                        </span>
+                                        <input type="text" class="form-control" ng-model="item.quantity" readonly>
+                                        <span class="input-group-btn" ng-click="vm.updateQuantity(key, item.quantity, -1)">
+                                            <button class="btn btn-default" type="button"><i class="fa fa-minus"></i></button>
+                                        </span>
+                                    </div>
+                                    <div class="margin-top-30">
+                                        <span>{{item.pricing.raw.without_tax * item.quantity | currency: '&#8377;'}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="loading backdrop-color" ng-show="item.updating">
+                            <div class="loading-image"><i class="fa fa-refresh"></i></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row no-margin">
+                    <div class="col-md-4 summarytitle" ng-bind="::vm.labelService.labels.cartOrderSummaryTitle"></div>
+                </div>
+                <div class="row no-margin">
+                    <div class="carttotal">{{vm.getCartTotal() | currency: '&#8377;'}}</div>
+                </div>
+                <a ui-sref="checkout" class="btn btn-important margin-top-30 col-md-4 col-xs-12" ng-bind="::vm.labelService.labels.cartCheckout"></a>
+            </div>
+        </div>
+    </div>
+</div>

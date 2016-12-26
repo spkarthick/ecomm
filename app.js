@@ -1,6 +1,6 @@
 (function(){
 	
-	var myApp = angular.module("myApp", [
+    var myApp = angular.module("myApp", [
 		"ui.router",
 		"ui.bootstrap",
 		"ngAnimate",
@@ -11,22 +11,38 @@
         "shop",
         "contact",
         "cart",
-		"footer"
-	]).factory("labelService", ["$http", function($http) {
+        "checkout",
+		"footer",
+        "track"
+    ]).factory("labelService", ["$http", function ($http) {
         var labelService = {
             labels: {},
-             getLabels: function() {
-                 return $http.get("common/labels.json").then(function(res) {
-                     labelService.labels = res.data;
-                 });
-             }
-         };
-        
+            getLabels: function () {
+                return $http.get("common/labels.json").then(function (res) {
+                    labelService.labels = res.data;
+                });
+            }
+        };
+
         return labelService;
-    }]).value("cart", []);
+    }]).run(["$rootScope", function ($rootScope) {
+        $rootScope.$on("$stateChangeStart", function () {
+            $rootScope.loading = true;
+        });
+        $rootScope.$on("$stateChangeSuccess", function () {
+            $rootScope.loading = false;
+        });
+    }])
+    .value("moltin", new Moltin({ publicId: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
 	
-	angular.element(document).ready(function() {
-		angular.bootstrap(document.body,["myApp"]);	
+	angular.element(document).ready(function () {
+	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
+	        
+	        moltin.Authenticate(function (data) {
+	            angular.module("myApp").value("cart", moltin.Cart.Contents());
+	            angular.bootstrap(document.body, ["myApp"]);
+	        });
+	    }]);
 	});
 	
 })();

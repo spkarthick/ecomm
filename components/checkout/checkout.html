@@ -1,0 +1,181 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-9">
+            <form name="address" novalidate>
+                <div class="checkout-tab-bar row">
+                    <div class="col-md-12 columns">
+                        <h3>
+                            Billing/Shipping Address
+                        </h3>
+                    </div>
+                </div>
+                <div class="checkout-content checkout-open">
+                    <div name="address-form" class="row">
+                        <div class="col-md-12" style="padding-bottom: 0;">
+                            <div class="col-md-12 col-sm-12 col-lg-6">
+                                <h4 name="title-p-d">
+                                    Billing Address
+                                    <span class="fa-stack" style="visibility:hidden;">
+                                        <i class="fa fa-square-o fa-stack-2x"></i>
+                                        <i class="fa fa-check fa-stack-1x"></i>
+                                    </span>
+                                </h4>
+
+                                <div name="billing-info" class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_firstName">First Name *</label>
+                                        <input type="text" class="form-control" ng-model="vm.billingInfo.firstName" name="billing_firstName" required placeholder="First Name" />
+                                        <span class="error small text-danger" ng-show="address.billing_firstName.$touched && address.billing_firstName.$invalid">Please enter your first name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_lastName">Last Name *</label>
+                                        <input type="text" class="form-control" ng-model="vm.billingInfo.lastName" name="billing_lastName" required placeholder="Last Name" />
+                                        <span class="error small text-danger" ng-show="address.billing_lastName.$touched && address.billing_lastName.$invalid">Please enter your last name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_email">E-mail Address *</label>
+                                        <input type="email" class="form-control" ng-model="vm.billingInfo.email" name="billing_email" required placeholder="example@email.com" />
+                                        <span class="error small text-danger" ng-show="address.billing_email.$touched && address.billing_email.$invalid">Please enter a valid email address</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_phone">Phone Number *</label>
+                                        <input type="number" class="form-control" minlength="10" maxlength="10" ng-model="vm.billingInfo.phone" name="billing_phone" required placeholder="0123456789" />
+                                        <span class="error small text-danger" ng-show="address.billing_phone.$touched && address.billing_phone.$invalid">Please enter a valid phone number</span>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label for="billing_address">Address *</label>
+                                        <input type="text" class="form-control" name="billing_address" ng-model="vm.billingInfo.streetAddressLine1" required placeholder="123 Example Dr" />
+                                        <span class="error small text-danger" ng-show="address.billing_address.$touched && address.billing_address.$invalid">Please enter your address</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_city">City *</label>
+                                        <input type="text" class="form-control" ng-model="vm.billingInfo.city" name="billing_city" required placeholder="Chennai" />
+                                        <span class="error small text-danger" ng-show="address.billing_city.$touched && address.billing_city.$invalid">Please enter your city name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_postalCode">Zip Code *</label>
+                                        <input type="text" class="form-control" name="billing_postalCode" ng-model="vm.billingInfo.postalCode" required placeholder="600115" />
+                                        <span class="error small text-danger" ng-show="address.billing_postalCode.$touched && address.billing_postalCode.$invalid">Please enter your postal code</span>
+                                    </div>
+                                    <!--<div class="col-sm-6 form-group">
+                                        <label for="billing_country">Country</label>
+                                        <select name="billing_country" class="chzn-select form-control" ng-model="vm.billingInfo.countryId" data-state-selector="#billing_state" data-current-state="{{ billingInfo.stateId }}"></select>
+                                        <span class="error small text-danger"></span>
+                                    </div>-->
+                                    <div class="col-sm-6 form-group">
+                                        <label for="billing_state">State</label>
+                                        <select name="billing_state" class="chzn-select form-control" required ng-model="vm.billingInfo.stateId">
+                                            <option ng-repeat="state in vm.states" value="{{state}}">{{state}}</option>
+                                        </select>
+                                        <span class="error small text-danger" ng-show="address.billing_state.$touched && address.billing_state.$invalid">Please select your state</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-lg-6" name="mobile-shipping">
+                                <h4 name="title-p-d">
+                                    Shipping Address |
+                                    <span data-toggle-mirror="on" class="btn-form-mirror">
+                                        <span class="fa-stack" ng-click="vm.updateAddress()">
+                                            <i class="fa fa-square-o fa-stack-2x" style="visibility:visible"></i>
+                                            <i class="fa fa-check fa-stack-1x" ng-style="vm.visibility" name="check-box"></i>
+                                        </span>
+                                        Same as Billing Address
+                                    </span>
+                                </h4>
+
+
+                                <div name="shipping-info" class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_firstName">First Name *</label>
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.firstName" name="shipping_firstName" ng-disabled="vm.sameAddress" required placeholder="First Name" />
+                                        <span class="error small text-danger" ng-show="address.shipping_firstName.$touched && address.shipping_firstName.$invalid">Please enter your first name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_lastName">Last Name *</label>
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.lastName" name="shipping_lastName" ng-disabled="vm.sameAddress" required placeholder="Last Name" />
+                                        <span class="error small text-danger" ng-show="address.shipping_lastName.$touched && address.shipping_lastName.$invalid">Please enter your last name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_phone">Phone Number *</label>
+                                        <input type="number" class="form-control" ng-model="vm.shippingInfo.phone" name="shipping_phone" minlength="10" maxlength="10" ng-disabled="vm.sameAddress" required placeholder="0123456789" />
+                                        <span class="error small text-danger" ng-show="address.shipping_phone.$touched && address.shipping_phone.$invalid">Please enter a valid phone number</span>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label for="shipping_address">Address *</label>
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.streetAddressLine1" name="shipping_address" ng-disabled="vm.sameAddress" required placeholder="Address" />
+                                        <span class="error small text-danger" ng-show="address.shipping_address.$touched && address.shipping_address.$invalid">Please enter your address</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_city">City *</label>
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.city" name="shipping_city" ng-disabled="vm.sameAddress" required placeholder="City" />
+                                        <span class="error small text-danger" ng-show="address.shipping_city.$touched && address.shipping_city.$invalid">Please enter your city name</span>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_postalCode">Zip Code *</label>
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.postalCode" name="shipping_postalCode" required ng-disabled="vm.sameAddress" placeholder="Zip Code" />
+                                        <span class="error small text-danger" ng-show="address.shipping_postalCode.$touched && address.shipping_postalCode.$invalid">Please enter your postal code</span>
+                                    </div>
+                                    <!--<div class="col-sm-6 form-group">
+                                        <label for="shipping_country">Country</label>
+                                        <select name="shipping_country" class="chzn-select form-control" ng-disabled="vm.sameAddress" ng-model="vm.shippingInfo.countryId" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}"></select>
+                                        <span class="error small text-danger"></span>
+                                    </div>-->
+                                    <div class="col-sm-6 form-group">
+                                        <label for="shipping_state">State</label>
+                                        <select name="shipping_state" class="chzn-select form-control" ng-disabled="vm.sameAddress" ng-model="vm.shippingInfo.stateId" required>
+                                            <option ng-repeat="state in vm.states" value="{{state}}">{{state}}</option>
+                                        </select>
+                                        <span class="error small text-danger" ng-show="address.shipping_state.$touched && address.shipping_state.$invalid">Please select your state</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <a class="btn btn-important pull-right" ng-disabled="address.$invalid">Proceed to Shipping</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-3">
+            <div>
+                <h3>Items</h3>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item animate-repeat" ng-repeat="(key, item) in vm.cart.contents">
+                            <table>
+                                <tr>
+                                    <td style="width: 50%;">
+                                        <div class="productname">
+                                            <img ng-src="{{::item.images[0].url.https}}" />
+                                            <div class="producttitle text-center" ng-bind="::item.name"></div>
+                                        </div>
+                                    </td>
+                                    <td style="font-size:12px;">
+                                        <div style="float:right">
+                                            <span ng-bind="item.quantity"></span> X <span ng-bind="item.pricing.raw.without_tax | currency: '&#8377;'"></span>
+                                            <div style="font-size:15px;color:#000;">
+                                                <span>{{item.pricing.raw.without_tax * item.quantity | currency: '&#8377;'}}</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row no-margin">
+                    <div class="col-md-12 summarytitle" ng-bind="::vm.labelService.labels.cartOrderSummaryTitle"></div>
+                </div>
+                <div class="row no-margin">
+                    <div class="margin-top-10">Tax: <span>{{vm.getTax() | currency: '&#8377;'}}</span></div>
+                    <div class="carttotal">{{vm.getCartTotal() + vm.getTax() | currency: '&#8377;'}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

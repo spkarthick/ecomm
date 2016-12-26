@@ -1,5 +1,9 @@
 <div class="row">
-    <div class="col-xs-12 banner" style="background:url({{vm.labelService.labels.bannerImage}});background-size: cover;background-position: top center;">
+    <div class="col-xs-12 banner">
+        <img ng-src="{{vm.labelService.labels.bannerImage}}" />
+        <div class="banner-text" ng-bind-html="::vm.labelService.labels.bannerText">
+        </div>
+        <div class="banner-blur" style="background: url({{vm.labelService.labels.bannerImage}});"></div>
     </div>
 </div>
 <div class="jumbotron row onsale box-default text-center mission margin-top-50" ng-repeat="item in ::vm.labelService.labels.jumbotrons">

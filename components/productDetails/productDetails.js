@@ -9,9 +9,7 @@
 			template: "<productDetails product='vm.product'></productDetails>",
             resolve: {
                 product: ["$filter", "$stateParams", "shopService", function($filter, $stateParams, shopService){
-                    return shopService.getProducts().then(function(data){
-                        return $filter("filter")(data, {"id": $stateParams.productId})[0];
-                    });
+                    return shopService.getProducts($stateParams.productId);
                 }]
             },
             controller: ["product", function(product){

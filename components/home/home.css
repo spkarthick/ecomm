@@ -93,3 +93,70 @@ button.btn:focus, button.btn:active {
 .mission img {
     width: 100%;
 }
+
+.banner {
+    position:relative;
+}
+
+.banner img {
+    height: 100%;
+    float: right;
+}
+
+.navbar-brand {
+    padding: 0px 15px;
+}
+
+.banner-text, .banner-blur {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    bottom: 0px;
+    height: 200px;
+    width: 490px;
+    border-radius: 10px;
+    text-align: center;
+    padding:20px;
+}
+
+.bannertitle {
+    margin: 10px 0 20px 0;
+    color: #aa5446;
+}
+.banner-text{
+    z-index: 2;
+    font-size: 18px;
+    padding-left: 30px;
+}
+.banner-blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    opacity:0.5;
+    background: #FBFBFB;
+}
+
+.navbar-brand img {
+    width: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+    .banner-text, .banner-blur {
+        position: absolute;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+    }
+    .navbar-brand {
+        padding: 5px 15px;
+    }
+    .navbar-brand img {
+        width: 250px;
+    }
+}

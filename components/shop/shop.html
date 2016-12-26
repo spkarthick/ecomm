@@ -3,25 +3,26 @@
     <p ng-bind="::vm.labelService.labels.introDesc"></p>
     <div class="col-md-12 box-top">
         <span class="title heading-font" ng-bind="::vm.labelService.labels.featuredProductsTitle"></span>
-        <div ng-if="vm.showFeatured" class="col-md-6 text-center product" ng-repeat="product in ::vm.products | filter: {isFeatured: true}">
+        <!--<div ng-if="vm.showFeatured" class="col-md-6 text-center product" ng-repeat="product in ::vm.products | filter: {isFeatured: true}">
             <img ng-src="{{::product.image}}">
-            <h3 ng-bind="::product.name"></h3>
+            <h3 ng-bind="::product.title"></h3>
             <p class="small">
-            &#8377; {{::product.price}}
+            {{::product.price.value}}
             </p>
             <p></p>
             <p ng-bind="::product.description">If you are just buying for yourself, choose your favorite coffee bean and get it delivered monthly. You can change the blend each month if you would like.</p><p></p>                <br>
             <a href="#/product/{{product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
-        </div>
-        <div ng-if="!vm.showFeatured" class="col-md-6 text-center product" ng-repeat="product in ::vm.products">
-            <img ng-src="{{::product.image}}">
-            <h3 ng-bind="::product.name"></h3>
+        </div>-->
+        <div class="col-md-6 text-center product" ng-repeat="product in ::vm.products">
+            <img ng-src="{{::product.images[0].url.https}}">
+            <h3 ng-bind="::product.title"></h3>
             <p class="small">
-            &#8377; {{::product.price}}
+            {{::product.price.value}}
             </p>
             <p></p>
-            <p ng-bind="::product.description">If you are just buying for yourself, choose your favorite coffee bean and get it delivered monthly. You can change the blend each month if you would like.</p><p></p>                <br>
-            <a href="#/product/{{product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
+            <p ng-bind="::product.description"></p>
+            <br>
+            <a href="#/product/{{::product.slug}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
         </div>
         <div class="col-md-12">
             <a ui-sref="shop" ng-show="vm.showFeatured">See more &#8594;</a>

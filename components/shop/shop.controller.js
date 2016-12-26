@@ -2,10 +2,10 @@
 	
 	var module = angular.module("shop");
 	
-	module.controller("shopController", ["$filter", "shopService", "labelService", function($filter, shopService, labelService) {
+    module.controller("shopController", ["$filter", "$rootScope", "shopService", "labelService", function($filter, $rootScope, shopService, labelService) {
 		var vm = this;
 		vm.name = "shop";
-        vm.labelService = labelService;
+		vm.labelService = labelService;
 	}]);
 	
 })();

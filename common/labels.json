@@ -1,61 +1,70 @@
 {
-    "header": {
-        "items": {
-            "shop": {
-                "label": "shop",
-                "state": "shop"
-            },
-            "contact": {
-                "label": "contact",
-                "state": "contact"
-            },
-            "cart": {
-                "label": "cart",
-                "state": "cart",
-                "class": "fa fa-shopping-cart cartItem"
-            },
-            "checkout": {
-                "label": "checkout",
-                "state": "checkout"
-            }
-        },
-        "logo": "",
-        "brandName": "Pentagrit"
+  "header": {
+    "items": {
+      "shop": {
+        "label": "shop",
+        "state": "shop"
+      },
+      "contact": {
+        "label": "contact",
+        "state": "contact"
+      },
+      "cart": {
+        "label": "cart",
+        "state": "cart",
+        "class": "fa fa-shopping-cart cartItem"
+      },
+      "checkout": {
+        "label": "checkout",
+        "state": "checkout"
+      },
+      "track": {
+        "label": "track order",
+        "state": "track"
+      }
     },
-    "bannerImage": "common/images/cover.jpg",
-    "contactBannerImage": "common/images/contact.jpg",
-    "introTitle": "What you can get?",
-    "introDesc": "We have flexible plans whether you are subscribing for the office or for yourself",
-    "featuredProductsTitle": "Our Plans",
-    "buyNowButton": "I want this!",
-    "productBuyNow": "Buy Now",
-    "productUpdateNow": "Update",
-    "jumbotrons": [
-        
+    "logo": "",
+    "brandName": "common/images/logo.png"
+  },
+  "bannerImage": "common/images/cover.jpg",
+  "contactBannerImage": "common/images/contact.jpg",
+  "introTitle": "What you can get?",
+  "introDesc": "We have flexible plans whether you are subscribing for the office or for yourself",
+  "featuredProductsTitle": "Our Products",
+  "buyNowButton": "I want this!",
+  "productBuyNow": "Buy Now",
+  "productUpdateNow": "Update",
+  "emptyCart": "There are no items in your cart!",
+  "continueShopping": "Continue Shopping",
+  "cartTitle": "Your Cart",
+  "cartOrderSummaryTitle": "Order Summary",
+  "cartCheckout": "Checkout",
+  "bannerText": "<h1 class='bannertitle text-left'>Take your daily diet today!</h1><div class='text-left'><div><strong>34</strong> Vegetables</div><div><strong>11</strong> Millets & Pulses</div><div><strong>6</strong> Fruits & Flowers</div></div>",
+  "jumbotrons": [
+
+    {
+      "title": "Our Product and Mission",
+      "desc": "To create a generation with high energy.",
+      "items": [
+
         {
-            "title": "Our Story and Mission",
-            "desc": "Finding a way to serve eachother accross the world.",
-            "items": [
-                
-            {
-                "image": "common/images/charity.jpg",
-                "desc": "<img src='common/images/help.png' alt=''><p>For every coffee bag we send to you, we will donate 10% of our profits to a charity of your choice.</p><p>We believe in paying it forward to those in need. Money should never be a concernt to those who need it. Our team goes out to Africa every year to build houses. Check out the about page to learn more about our trip to Africa!</p>"
-            },
-                
-            {
-                "image": "common/images/charity.jpg",
-                "desc": "<img src='common/images/help.png' alt=''><p>For every coffee bag we send to you, we will donate 10% of our profits to a charity of your choice.</p><p>We believe in paying it forward to those in need. Money should never be a concernt to those who need it. Our team goes out to Africa every year to build houses. Check out the about page to learn more about our trip to Africa!</p>"
-            }
-            
-            ]
+          "image": "common/images/vegtables.jpg",
+          "desc": "<p></p><p>Young and Energetic is completely a plant based derivatives developed by a Team of Researchers. Founded in 2010, Y & E is an original product from our Research Desk. Over a period of 5yrs Y & E continues to prove its promising effect on multiple Disorders with most satisfying health benefits.</p>"
+        },
+        {
+          "image": "common/images/product.jpg",
+          "desc": "<p></p><p>With 9 Products and promising Health Benefits Y & E stands ahead of the existing commercial products. It resolves most of the common day to day problems from Sleep disorder, in digestion, inactivity, low energy also it enhances the beauty from within.</p>"
         }
-    
-    ],
-    "itemInCart": "Item already in cart, you can update the quantity here.",
-    "knowUs": "Get to know us more",
-    "socialLinks": {
-        "facebook": "https://www.facebook.com/people/Pentagrit/100008640930070",
-        "twitter": "https://twitter.com/pentagrit",
-        "linkedin": "https://www.linkedin.com/company/pentagrit"
+
+      ]
     }
+
+  ],
+  "itemInCart": "Item already in cart, you can update the quantity here.",
+  "knowUs": "Get to know us more",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/people/Pentagrit/100008640930070",
+    "twitter": "https://twitter.com/pentagrit",
+    "linkedin": "https://www.linkedin.com/company/pentagrit"
+  }
 }
