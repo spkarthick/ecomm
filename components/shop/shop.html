@@ -17,7 +17,7 @@
             <img ng-src="{{::product.images[0].url.https}}">
             <h3 ng-bind="::product.title"></h3>
             <p class="small">
-            {{::product.price.value}}
+            {{::product.price.data.raw.without_tax | currency: '&#8377;'}}
             </p>
             <p></p>
             <p ng-bind="::product.description"></p>
