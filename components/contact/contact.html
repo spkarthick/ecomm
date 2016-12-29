@@ -1,6 +1,6 @@
 <div class="full-jumbotron no-padding row contact-head contact" style="background:url({{vm.labelService.labels.contactBannerImage}});background-size: cover;background-position: top center;">
 	<div class="col-md-12 text-center contact-title">
-		<h1>Contact Coffree</h1>
+		<h1 ng-bind="::vm.labelService.labels.contactTitle"></h1>
 	</div>
 </div>
 
@@ -12,12 +12,7 @@
 		</div>
 	</div><br><br>
 	<div class="col-md-8 col-md-offset-2 text-center">
-        <p id="contact-info">We believe in the beauty of happiness and value the feedback that our customers have. If you have any questions in regards to our coffee or our mission please do not hesitate to contact us.<br> <br>
-        823 Main St<br>
-        Vancvouer, BC <br>
-        phone: (123) 941 756 1234<br>
-        fax: (123) 941 756 1234<br>
-        <br>
+        <p id="contact-info" ng-bind-html="::vm.labelService.labels.contactInfo">
         </p>
 	</div>
 

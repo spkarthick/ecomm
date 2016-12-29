@@ -5,8 +5,11 @@ html, body {
 }
 [ui-view] {
     margin-top: 90px;
+    min-height: 100%;
 }
-
+[ui-view].ng-enter + footer, [ui-view].ng-leave + footer {
+    display: none;
+}
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;

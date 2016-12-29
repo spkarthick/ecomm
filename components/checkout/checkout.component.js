@@ -6,7 +6,6 @@
 		controller: "checkoutController",
 		controllerAs: "vm",
 		bindings: {
-		    taxes: "<",
             states: "<"
 		},
 		bindToController: true

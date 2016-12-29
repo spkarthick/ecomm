@@ -13,7 +13,8 @@
         "cart",
         "checkout",
 		"footer",
-        "track"
+        "track",
+        "doc"
     ]).factory("labelService", ["$http", function ($http) {
         var labelService = {
             labels: {},

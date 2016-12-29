@@ -139,7 +139,7 @@ button.btn:focus, button.btn:active {
 }
 
 .navbar-brand img {
-    width: 300px;
+    width: 80px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -154,9 +154,9 @@ button.btn:focus, button.btn:active {
         border-radius: 0px;
     }
     .navbar-brand {
-        padding: 5px 15px;
+        padding: 12px 15px;
     }
     .navbar-brand img {
-        width: 250px;
+        width: 60px;
     }
 }

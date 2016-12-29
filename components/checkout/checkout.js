@@ -6,18 +6,14 @@
 		$stateProvider.state({
 			name: "checkout",
 			url: "/checkout",
-			template: "<checkout taxes='vm.taxes' states='vm.states'></checkout>",
+			template: "<checkout states='vm.states'></checkout>",
 			resolve: {
-			    taxes: ["checkoutService", function (checkoutService) {
-			        return checkoutService.getTaxDetails();
-			    }],
 			    states: ["checkoutService", function (checkoutService) {
 			        return checkoutService.getStates();
 			    }]
 			},
-			controller: ["taxes", "states", function (taxes, states) {
+			controller: ["states", function (states) {
 			    var vm = this;
-			    vm.taxes = taxes;
 			    vm.states = states;
 			}],
 			controllerAs: "vm",

@@ -7,11 +7,23 @@
 		vm.name = "checkout";
 		vm.labelService = labelService;
 		vm.sameAddress = false;
+		vm.agree = "no";
 		vm.visibility = { 'visibility': 'hidden' };
+		vm.agreeCheckStyle = { 'visibility': 'hidden' }
 		vm.shippingInfo = {};
 		vm.tempAddr = {};
 		vm.billingInfo = {};
 		vm.cart = moltin.Cart.Contents();
+		vm.updateAgree = function () {
+		    if (vm.agree == 'yes') {
+		        vm.agree = 'no';
+		        vm.agreeCheckStyle = { 'visibility': 'hidden' };
+		    }
+		    else {
+		        vm.agree = 'yes';
+		        vm.agreeCheckStyle = { 'visibility': 'visible' };
+		    }
+		}
 		vm.updateAddress = function () {
             vm.sameAddress = !vm.sameAddress;
             if (vm.sameAddress) {
