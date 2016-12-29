@@ -1,6 +1,10 @@
 {
   "header": {
     "items": {
+      "home": {
+        "label": "home",
+        "state": "home"
+      },
       "shop": {
         "label": "shop",
         "state": "shop"
