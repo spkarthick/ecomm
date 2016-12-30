@@ -141,7 +141,7 @@
                             <span>I agree to the <a class="underline" href="#/doc/termsandcondition" target="_blank">Terms and Conditions</a> and <a class="underline" href="#/doc/shipping" target="_blank">Shipping Policy</a></span>
                         </div>
                         <div class="col-sm-12 margin-top-30">
-                            <a class="btn btn-important pull-right" ng-disabled="address.$invalid || vm.agree == 'no'">Proceed to Shipping</a>
+                            <a class="btn btn-important pull-right" ng-disabled="address.$invalid || vm.agree == 'no'" ng-click="vm.makePayment()">Proceed to Shipping</a>
                         </div>
                     </div>
                 </div>

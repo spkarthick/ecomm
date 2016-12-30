@@ -2,7 +2,7 @@
 	
 	var module = angular.module("checkout");
 	
-	module.controller("checkoutController", ["$rootScope", "checkoutService", "cart", "labelService", "moltin", function ($rootScope, checkoutService, cart, labelService, moltin) {
+    module.controller("checkoutController", ["$rootScope", "checkoutService", "cart", "labelService", "moltin", function ($rootScope, checkoutService, cart, labelService, moltin) {
 		var vm = this;
 		vm.name = "checkout";
 		vm.labelService = labelService;
@@ -14,6 +14,48 @@
 		vm.tempAddr = {};
 		vm.billingInfo = {};
 		vm.cart = moltin.Cart.Contents();
+		vm.makePayment = function () {
+            debugger
+		    moltin.Cart.Complete({
+		        customer: {
+		            first_name: vm.billingInfo.firstName,
+		            last_name: vm.billingInfo.lastName || "",
+		            email: vm.billingInfo.email
+		        },
+		        shipping: 'dtdc',
+		        gateway: 'manual',
+		        bill_to: {
+		            first_name: vm.billingInfo.firstName,
+		            last_name: vm.billingInfo.lastName,
+		            address_1: vm.billingInfo.streetAddressLine1,
+		            city: vm.billingInfo.city,
+		            county: vm.billingInfo.stateId,
+		            country: 'IN',
+		            postcode: vm.billingInfo.postalCode,
+		            phone: vm.billingInfo.phone
+		        },
+		        ship_to: {
+		            first_name: vm.shippingInfo.firstName,
+		            last_name: vm.shippingInfo.lastName,
+		            address_1: vm.shippingInfo.streetAddressLine1,
+		            city: vm.shippingInfo.city,
+		            county: vm.shippingInfo.stateId,
+		            country: 'IN',
+		            postcode: vm.shippingInfo.postalCode,
+		            phone: vm.shippingInfo.phone
+		        },
+		    }, function (order) {
+                debugger
+		        moltin.Cart.Delete(function () {
+		            var form = '<form action="https://pguat.paytm.com/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value=""/><input name="ORDER_ID" type="text" type="hidden" value="' + order.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.customer.data.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + order.totals.total.raw + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value=""/><input name="WEBSITE" type="text" type="hidden" value=""/><input name="CHECKSUMHASH" type="text" type="hidden" value=""/><input name="MOBILE_NO" type="text" type="hidden" value="' + vm.billingInfo.phone + '"/><input name="EMAIL" type="text" type="hidden" value="' + vm.billingInfo.email + '"/><input name="EMAIL" type="text" type="hidden" value="http://localhost:9000/#/confirmation"/></div></form>';
+		            $(form).appendTo('body').submit();
+		        }, function (error) {
+		            // Something went wrong...
+		        });
+		    }, function (error) {
+		        // Something went wrong...
+		    });
+		}
 		vm.updateAgree = function () {
 		    if (vm.agree == 'yes') {
 		        vm.agree = 'no';

@@ -14,7 +14,8 @@
         "checkout",
 		"footer",
         "track",
-        "doc"
+        "doc",
+        "confirmation"
     ]).factory("labelService", ["$http", function ($http) {
         var labelService = {
             labels: {},
