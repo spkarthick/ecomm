@@ -5,9 +5,6 @@
 		templateUrl: "components/checkout/checkout.html",
 		controller: "checkoutController",
 		controllerAs: "vm",
-		bindings: {
-            states: "<"
-		},
 		bindToController: true
 	});
 })();

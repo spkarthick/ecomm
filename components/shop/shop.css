@@ -1,0 +1,7 @@
+shop>.jumbotron {
+    position: relative;
+}
+
+.shop-height {
+    min-height: 650px;
+}

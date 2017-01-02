@@ -6,6 +6,11 @@
 		var vm = this;
 		vm.name = "shop";
 		vm.labelService = labelService;
+		vm.productsLoading = true;
+		shopService.getProducts().then(function (products) {
+		    vm.products = products;
+		    vm.productsLoading = false;
+		});
 	}]);
 	
 })();

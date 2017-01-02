@@ -5,9 +5,6 @@
 		templateUrl: "components/home/home.html",
         controller: "homeController",
         controllerAs: "vm",
-        bindings: {
-            products: "<"
-        },
         bindToController: true
 	});
 })();

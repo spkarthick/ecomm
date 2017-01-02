@@ -6,8 +6,7 @@
 		controller: "shopController",
 		controllerAs: "vm",
         bindings: {
-            "showFeatured": "<",
-            "products": "<"
+            "showFeatured": "<"
         },
         bindToController: true
 	});
