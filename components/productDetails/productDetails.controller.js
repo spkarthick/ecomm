@@ -2,13 +2,14 @@
 	
 	var module = angular.module("productDetails");
 	
-    module.controller("productDetailsController", ["$filter", "$scope", "$rootScope", "productDetailsService", "labelService", "moltin", "cart", function ($filter, $scope, $rootScope, productDetailsService, labelService, moltin, cart) {
+	module.controller("productDetailsController", ["$filter", "$scope", "$rootScope", "$stateParams", "productDetailsService", "labelService", "moltin", "cart", "shopService", function ($filter, $scope, $rootScope, $stateParams, productDetailsService, labelService, moltin, cart, shopService) {
 		var vm = this;
 		vm.name = "productDetails";
         vm.labelService = labelService;
         vm.quantity = 1;
         vm.cart = moltin.Cart.Contents();
         vm.loading = false;
+        vm.product = shopService.getProducts($stateParams.productId);
         moltin.Cart.InCart(vm.product.id, function (item) {
             if (item.in_cart) {
                 vm.cartItem = angular.copy(vm.product);

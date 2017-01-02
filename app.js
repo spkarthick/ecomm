@@ -39,7 +39,6 @@
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
-	        
 	        moltin.Authenticate(function (data) {
 	            angular.module("myApp").value("cart", moltin.Cart.Contents());
 	            angular.bootstrap(document.body, ["myApp"]);

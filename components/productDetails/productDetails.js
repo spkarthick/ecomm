@@ -6,17 +6,7 @@
 		$stateProvider.state({
 			name: "productDetails",
 			url: "/product/:productId",
-			template: "<productDetails product='vm.product'></productDetails>",
-            resolve: {
-                product: ["$filter", "$stateParams", "shopService", function($filter, $stateParams, shopService){
-                    return shopService.getProducts($stateParams.productId);
-                }]
-            },
-            controller: ["product", function(product){
-                var vm = this;
-                vm.product = product;
-            }],
-            controllerAs: "vm",
+			template: "<productDetails></productDetails>"
 		});
 	}]);
 	

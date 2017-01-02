@@ -612,17 +612,7 @@ E&&(angular.element(i).off("resize",n),h.find("body").off("scroll",n)),T.remove(
 		$stateProvider.state({
 			name: "productDetails",
 			url: "/product/:productId",
-			template: "<productDetails product='vm.product'></productDetails>",
-            resolve: {
-                product: ["$filter", "$stateParams", "shopService", function($filter, $stateParams, shopService){
-                    return shopService.getProducts($stateParams.productId);
-                }]
-            },
-            controller: ["product", function(product){
-                var vm = this;
-                vm.product = product;
-            }],
-            controllerAs: "vm",
+			template: "<productDetails></productDetails>"
 		});
 	}]);
 	
@@ -632,13 +622,14 @@ E&&(angular.element(i).off("resize",n),h.find("body").off("scroll",n)),T.remove(
 	
 	var module = angular.module("productDetails");
 	
-    module.controller("productDetailsController", ["$filter", "$scope", "$rootScope", "productDetailsService", "labelService", "moltin", "cart", function ($filter, $scope, $rootScope, productDetailsService, labelService, moltin, cart) {
+	module.controller("productDetailsController", ["$filter", "$scope", "$rootScope", "$stateParams", "productDetailsService", "labelService", "moltin", "cart", "shopService", function ($filter, $scope, $rootScope, $stateParams, productDetailsService, labelService, moltin, cart, shopService) {
 		var vm = this;
 		vm.name = "productDetails";
         vm.labelService = labelService;
         vm.quantity = 1;
         vm.cart = moltin.Cart.Contents();
         vm.loading = false;
+        vm.product = shopService.getProducts($stateParams.productId);
         moltin.Cart.InCart(vm.product.id, function (item) {
             if (item.in_cart) {
                 vm.cartItem = angular.copy(vm.product);
@@ -707,11 +698,7 @@ E&&(angular.element(i).off("resize",n),h.find("body").off("scroll",n)),T.remove(
 	module.component("productdetails", {
 		templateUrl: "components/productDetails/productDetails.html",
 		controller: "productDetailsController",
-		controllerAs: "vm",
-        bindToController:true,
-        bindings: {
-            "product": "<"
-        }
+		controllerAs: "vm"
 	});
 })();
 (function(){
@@ -1191,7 +1178,6 @@ E&&(angular.element(i).off("resize",n),h.find("body").off("scroll",n)),T.remove(
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
-	        
 	        moltin.Authenticate(function (data) {
 	            angular.module("myApp").value("cart", moltin.Cart.Contents());
 	            angular.bootstrap(document.body, ["myApp"]);
