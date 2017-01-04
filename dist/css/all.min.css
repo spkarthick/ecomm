@@ -2788,9 +2788,6 @@ cart .list-group .producttitle {
     font-weight: bold;
 }
 
-cart .productname {
-    width: 200px;
-}
 
 cart .list-group .list-group-item>div {
     height:100%;
@@ -2829,6 +2826,11 @@ cart .list-group .list-group-item>div {
     .list-group-item {
         margin: 20px auto 0px auto;
         display: table;
+        padding-right: 15px;
+    }
+    .list-group-item, .list-group-item table {
+        width: 100%;
+        table-layout: fixed;
     }
 }
 
