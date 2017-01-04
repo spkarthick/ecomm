@@ -2804,6 +2804,22 @@ cart .list-group .list-group-item>div {
     right: 20px;
     top: 20px;
 }
+.list-group-item .productname { 
+	width:180px;
+}
+
+@media only screen and (max-width: 400px) {
+	.list-group-item .productname { 
+		width:100px;
+	}
+	
+	.list-group-item .fa-close {
+		position: absolute;
+		cursor: pointer;
+		right: 5px;
+		top: 5px;
+	}
+}
 
 .list-group-item {
     width: auto;
