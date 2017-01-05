@@ -47,7 +47,8 @@ home *{
     opacity: 0.8;
 }
 .onsale {
-    padding-top: 20px;
+    padding-top: 50px;
+	margin-bottom: 35px;
 }
 .onsale img {
     width: 70%;

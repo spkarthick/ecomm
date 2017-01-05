@@ -2,29 +2,25 @@
   "header": {
     "items": {
       "home": {
-        "label": "home",
+        "label": "Home",
         "state": "home"
       },
       "shop": {
-        "label": "shop",
+        "label": "Shop",
         "state": "shop"
       },
       "contact": {
-        "label": "contact",
+        "label": "Contact",
         "state": "contact"
       },
       "cart": {
-        "label": "cart",
+        "label": "Cart",
         "state": "cart",
         "class": "fa fa-shopping-cart cartItem"
       },
       "checkout": {
-        "label": "checkout",
+        "label": "Checkout",
         "state": "checkout"
-      },
-      "track": {
-        "label": "track order",
-        "state": "track"
       }
     },
     "logo": "",
@@ -57,7 +53,7 @@
         },
         {
           "image": "common/images/product.jpg",
-          "desc": "<p></p><p>With 9 Products and promising Health Benefits Y & E stands ahead of the existing commercial products. It resolves most of the common day to day problems from Sleep disorder, in digestion, inactivity, low energy also it enhances the beauty from within.</p>"
+          "desc": "<p></p><p>With 9 Products and promising Health Benefits Y & E stands ahead of the existing commercial products. It resolves most of the common day to day problems from Sleep disorder, in digestion, inactivity, low energy also it enhances the beauty from within.</p><p><a class='btn btn-important' href='#/shop'>Take me to store &#8594;</a></p>"
         }
 
       ]

@@ -2601,7 +2601,8 @@ home *{
     opacity: 0.8;
 }
 .onsale {
-    padding-top: 20px;
+    padding-top: 50px;
+	margin-bottom: 35px;
 }
 .onsale img {
     width: 70%;
@@ -2803,6 +2804,22 @@ cart .list-group .list-group-item>div {
     right: 20px;
     top: 20px;
 }
+.list-group-item .productname { 
+	width:180px;
+}
+
+@media only screen and (max-width: 400px) {
+	.list-group-item .productname { 
+		width:100px;
+	}
+	
+	.list-group-item .fa-close {
+		position: absolute;
+		cursor: pointer;
+		right: 5px;
+		top: 5px;
+	}
+}
 
 .list-group-item {
     width: auto;
@@ -2831,6 +2848,9 @@ cart .list-group .list-group-item>div {
     .list-group-item, .list-group-item table {
         width: 100%;
         table-layout: fixed;
+    }
+    cart .productname {
+        width: auto;
     }
 }
 
