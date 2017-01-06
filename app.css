@@ -7,6 +7,13 @@ html, body {
     margin-top: 90px;
     min-height: 100%;
 }
+
+@media only screen and (max-width: 427px) { 
+	[ui-view] {
+		margin-top: 135px;
+	}
+}
+
 [ui-view].ng-enter + footer, [ui-view].ng-leave + footer {
     display: none;
 }
