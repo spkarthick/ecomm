@@ -2,12 +2,12 @@
     <div class="row">
         <div class="margin-top-30 col-xs-12 col-sm-5 col-md-4 col-lg-3">
             <h5>Please enter your orderid</h5>
-            <input class="margin-top-10 form-control" type="text" name="orderid" value="" />
-            <div class="text-danger">Please enter a valid orderId</div>
-            <button class="btn btn-important margin-top-30">Check</button>
+            <input class="margin-top-10 form-control" type="text" name="orderid" ng-model="vm.orderId"/>
+            <div class="text-danger" ng-show="vm.status == 'invalid'">Please enter a valid orderId</div>
+            <button class="btn btn-important margin-top-30" ng-click="vm.getStatus()">Check</button>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-show="vm.status && vm.status != 'invalid'">
         <div class="margin-top-30">
             <div class="row bs-wizard" style="border-bottom:0;">
 
@@ -18,7 +18,7 @@
                     <div class="bs-wizard-info text-center ng-hide">Lorem ipsum dolor sit amet.</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step complete">
+                <div class="col-xs-3 bs-wizard-step" ng-class="{'disabled': (vm.status != 'paid' && vm.status != 'complete' && vm.status != 'dispatched' && vm.status != 'unpaid'),'complete': (vm.status == 'paid' || vm.status == 'complete' || vm.status == 'dispatched'),'active': vm.status == 'unpaid'}">
                     <!-- complete -->
                     <div class="text-center bs-wizard-stepnum">Make Payment</div>
                     <div class="progress"><div class="progress-bar"></div></div>
@@ -26,20 +26,28 @@
                     <div class="bs-wizard-info text-center ng-hide">Nam mollis tristique erat vel tristique. Aliquam erat volutpat. Mauris et vestibulum nisi. Duis molestie nisl sed scelerisque vestibulum. Nam placerat tristique placerat</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step active">
+                <div class="col-xs-2 bs-wizard-step" ng-class="{'disabled': (vm.status != 'complete' && vm.status != 'paid' && vm.status != 'dispatched'),'complete': (vm.status == 'complete' || vm.status == 'dispatched'),'active': vm.status == 'paid'}">
                     <!-- complete -->
                     <div class="text-center bs-wizard-stepnum">Shipping</div>
                     <div class="progress"><div class="progress-bar"></div></div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Tracking Id: <a href="">#12S4G57</a></div>
+                    <div class="bs-wizard-info text-center ng-hide">Tracking Id: <a href="">#12S4G57</a></div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step disabled">
+                <div class="col-xs-2 bs-wizard-step" ng-class="{'disabled': (vm.status != 'complete' && vm.status != 'dispatched'),'complete': vm.status == 'complete','active': vm.status == 'dispatched'}">
+                    <!-- complete -->
+                    <div class="text-center bs-wizard-stepnum">Dispatched</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a href="#" class="bs-wizard-dot"></a>
+                    <div class="bs-wizard-info text-center ng-hide">Tracking Id: <a href="">#12S4G57</a></div>
+                </div>
+
+                <div class="col-xs-2 bs-wizard-step" ng-class="{'disabled': vm.status != 'complete', 'active': vm.status == 'complete'}">
                     <!-- active -->
                     <div class="text-center bs-wizard-stepnum">Delivery</div>
                     <div class="progress"><div class="progress-bar"></div></div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center">Pending</div>
+                    <div class="bs-wizard-info text-center ng-hide">Pending</div>
                 </div>
             </div>
         </div>

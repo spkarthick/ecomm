@@ -21,6 +21,10 @@
       "checkout": {
         "label": "Checkout",
         "state": "checkout"
+      },
+      "track": {
+        "label": "Track Order",
+        "state": "track"
       }
     },
     "logo": "",
