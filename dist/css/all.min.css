@@ -2352,6 +2352,13 @@ html, body {
     margin-top: 90px;
     min-height: 100%;
 }
+
+@media only screen and (max-width: 427px) { 
+	[ui-view] {
+		margin-top: 135px;
+	}
+}
+
 [ui-view].ng-enter + footer, [ui-view].ng-leave + footer {
     display: none;
 }
@@ -2659,10 +2666,6 @@ button.btn:focus, button.btn:active {
     float: right;
 }
 
-.navbar-brand {
-    padding: 0px 15px;
-}
-
 .banner-text, .banner-blur {
     position: absolute;
     left: 10%;
@@ -2695,7 +2698,7 @@ button.btn:focus, button.btn:active {
 }
 
 .navbar-brand img {
-    width: 80px;
+    width: 200px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2711,9 +2714,6 @@ button.btn:focus, button.btn:active {
     }
     .navbar-brand {
         padding: 12px 15px;
-    }
-    .navbar-brand img {
-        width: 60px;
     }
 }
 productdetails img {
