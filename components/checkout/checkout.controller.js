@@ -44,12 +44,23 @@
                     phone: vm.shippingInfo.phone
                 },
             }, function (order) {
-                moltin.Cart.Delete(function () {
-                    var form = '<form action="https://pguat.paytm.com/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value=""/><input name="ORDER_ID" type="text" type="hidden" value="' + order.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.customer.data.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + order.totals.total.raw + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value=""/><input name="WEBSITE" type="text" type="hidden" value=""/><input name="CHECKSUMHASH" type="text" type="hidden" value=""/><input name="MOBILE_NO" type="text" type="hidden" value="' + vm.billingInfo.phone + '"/><input name="EMAIL" type="text" type="hidden" value="' + vm.billingInfo.email + '"/><input name="EMAIL" type="text" type="hidden" value="http://localhost:9000/#/confirmation"/></div></form>';
-                    $(form).appendTo('body').submit();
-                }, function (error) {
+                //moltin.Cart.Delete(function () {
+					
+                var form = '<form action="https://pguat.paytm.com/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value="Pentag28949300165860"/><input name="ORDER_ID" type="text" type="hidden" value="' + order.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.customer.data.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + order.totals.total.raw + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value="Retail"/><input name="WEBSITE" type="text" type="hidden" value="WEB_STAGING"/><input name="CALLBACK_URL" type="text" type="hidden" value="http://localhost:7000/payment"/></div></form>';
+                //$(form).appendTo('body').submit();
+				var unindexed_array = $(form).serializeArray();
+				var indexed_array = {};
+
+				$.map(unindexed_array, function(n, i){
+					indexed_array[n['name']] = n['value'];
+				});
+				checkoutService.generateCheckSum(indexed_array).then(function(data){
+					$(form).append('<input name="CHECKSUMHASH" type="text" type="hidden" value="'+ data +'"/>').appendTo('body').submit();
+				});
+				
+                //}, function (error) {
                     // Something went wrong...
-                });
+                //});
             }, function (error) {
                 // Something went wrong...
             });

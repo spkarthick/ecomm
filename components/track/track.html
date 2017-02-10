@@ -39,7 +39,7 @@
                     <div class="text-center bs-wizard-stepnum">Dispatched</div>
                     <div class="progress"><div class="progress-bar"></div></div>
                     <a href="#" class="bs-wizard-dot"></a>
-                    <div class="bs-wizard-info text-center ng-hide">Tracking Id: <a href="">#12S4G57</a></div>
+                    <div class="bs-wizard-info text-center" ng-if="vm.status == 'dispatched'">Tracking Id: <strong ng-bind="vm.trackingId || 'Yet to update'"></strong><br/>Carrier: <strong ng-bind="vm.shipping || 'Yet to update'">Yet to update</strong></div>
                 </div>
 
                 <div class="col-xs-2 bs-wizard-step" ng-class="{'disabled': vm.status != 'complete', 'active': vm.status == 'complete'}">
@@ -50,6 +50,9 @@
                     <div class="bs-wizard-info text-center ng-hide">Pending</div>
                 </div>
             </div>
+        </div>
+		<div class="loading backdrop-color" ng-show="vm.loading">
+            <div class="loading-image"><i class="fa fa-refresh"></i></div>
         </div>
     </div>
 </div>

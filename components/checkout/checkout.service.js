@@ -13,7 +13,18 @@
 	            return $http.get("common/states.json").then(function (res) {
 	                return res.data;
 	            });
-	        }
+	        },
+			generateCheckSum: function(data) {
+				return $http({ 
+					url: "http://localhost:7000/generatechecksum",
+					headers: {'content-type': 'application/json'},
+					data: data,
+					method: "POST"
+				}).then(function (res) {
+				debugger
+	                return res.data;
+	            });
+			}
 	    };
 	}]);
 	

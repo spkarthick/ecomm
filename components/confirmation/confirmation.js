@@ -5,7 +5,7 @@
 	module.config(["$stateProvider", function($stateProvider) {
 		$stateProvider.state({
 			name: "confirmation",
-			url: "/confirmation",
+			url: "/confirmation/:status",
 			template: "<confirmation></confirmation>",
 		});
 	}]);

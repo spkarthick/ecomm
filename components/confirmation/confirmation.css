@@ -5,3 +5,8 @@
 confirmation {
     color: #777;
 }
+
+Confirmation .fa {
+    font-size: 80px;
+    margin-top: 60px;
+}

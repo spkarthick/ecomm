@@ -127,10 +127,20 @@ checkout .form-group {
     padding:0px 30px;
 }
 
+.list-group-item.low-padding {
+	padding-right: 25px;
+}
+
 @media screen and (min-width: 769px) {
     .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
         font-size: 16px;
         margin-bottom: 5px;
     }
 
+}
+
+@media screen and (max-width: 768px) {
+	checkout .list-group-item .productname {
+		width: 140px;
+	}
 }
