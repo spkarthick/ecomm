@@ -50,9 +50,10 @@
                     <div class="bs-wizard-info text-center ng-hide">Pending</div>
                 </div>
             </div>
-        </div>
-		<div class="loading backdrop-color" ng-show="vm.loading">
-            <div class="loading-image"><i class="fa fa-refresh"></i></div>
+			<div ng-show="vm.status == 'dispatched'" class="text-danger">Note: For realtime tracking please check in carrier's tracking site.</div>
         </div>
     </div>
+	<div class="loading backdrop-color" ng-show="vm.loading">
+		<div class="loading-image"><i class="fa fa-refresh"></i></div>
+	</div>
 </div>

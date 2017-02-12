@@ -2,10 +2,10 @@
 	
 	var module = angular.module("track");
 	
-	module.controller("trackController", ["$rootScope", "trackService", "moltin", function ($rootScope, trackService, moltin) {
+	module.controller("trackController", ["$stateParams","$rootScope", "trackService", "moltin", function ($stateParams,$rootScope, trackService, moltin) {
 		var vm = this;
 		vm.name = "track";
-		vm.orderId = "";
+		vm.orderId = $stateParams.id || "";
 		vm.trackingId = "";
 		vm.shipping = '';
 		vm.loading = false;
@@ -25,6 +25,9 @@
 		        });
 		    }
 		}
+		
+		if($stateParams.id)
+			vm.getStatus();
 	}]);
 	
 })();

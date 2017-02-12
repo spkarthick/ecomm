@@ -14,3 +14,8 @@
 [0209/231054.616:ERROR:exception_snapshot_win.cc(180)] EXCEPTION_POINTERS read failed
 [0209/231054.617:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
 [0209/231054.619:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0212/115834.093:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0212/115834.123:ERROR:process_reader_win.cc(233)] ReadMemory at 0x4dbdf4 of 8 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0212/115834.123:ERROR:exception_snapshot_win.cc(180)] EXCEPTION_POINTERS read failed
+[0212/115834.123:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0212/115834.123:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

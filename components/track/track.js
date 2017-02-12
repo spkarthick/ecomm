@@ -5,7 +5,7 @@
 	module.config(["$stateProvider", function($stateProvider) {
 		$stateProvider.state({
 			name: "track",
-			url: "/track",
+			url: "/track/:id",
 			template: "<track></track>",
 		});
 	}]);

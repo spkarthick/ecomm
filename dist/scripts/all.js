@@ -1024,7 +1024,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 	module.config(["$stateProvider", function($stateProvider) {
 		$stateProvider.state({
 			name: "track",
-			url: "/track",
+			url: "/track/:id",
 			template: "<track></track>",
 		});
 	}]);
@@ -1035,10 +1035,10 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 	
 	var module = angular.module("track");
 	
-	module.controller("trackController", ["$rootScope", "trackService", "moltin", function ($rootScope, trackService, moltin) {
+	module.controller("trackController", ["$stateParams","$rootScope", "trackService", "moltin", function ($stateParams,$rootScope, trackService, moltin) {
 		var vm = this;
 		vm.name = "track";
-		vm.orderId = "";
+		vm.orderId = $stateParams.id || "";
 		vm.trackingId = "";
 		vm.shipping = '';
 		vm.loading = false;
@@ -1058,6 +1058,9 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		        });
 		    }
 		}
+		
+		if($stateParams.id)
+			vm.getStatus();
 	}]);
 	
 })();
