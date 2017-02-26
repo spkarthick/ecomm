@@ -43,17 +43,17 @@
   "cartTitle": "Your Cart",
   "cartOrderSummaryTitle": "Order Summary",
   "cartCheckout": "Checkout",
-  "bannerText": "<h1 class='bannertitle text-left'>About Us</h1><div class='text-left'>We use vegetable formulations to strengthen your body to fight different disease conditions.</div>",
+  "bannerText": "<h1 class='bannertitle text-left'>About Us</h1><div class='text-left'>Young and energetic was developed over 10 years of research on learning to balance the body through using dietetic principles. We use vegetable formulations to strengthen your body to fight different disease conditions.</div>",
   "jumbotrons": [
 
     {
       "title": "Our Product and Mission",
-      "desc": "A vegetable capsule a day  for a 'fit' state of health. An Effortless way to stay Healthy.",
+      "desc": "An Effortless way to stay Healthy.",
       "items": [
 
         {
           "image": "common/images/vegtables.jpg",
-          "desc": "<p></p><p>Young and energetic was developed over 10 years of research on learning to balance the body through using dietetic principles. For patients with acidic disease conditions vegetables that enhance alkalinity are formulated to a daily dosage. For sleep fruits that balances circadian rhythm are formulated and for stress multiple dietetic sources that balances the body’s homeostasis are formulated. Using the same principle as of nature we use simple dietetics to carefully balance the human body.</p>"
+          "desc": "<h4>How it works</h4><p>We formulate unprocessed vegetable powder Immuno Modulating Vegetables  for Anti-Hives and Urticaria, Anti-Arthritis, Anti Spinal Back Pain Metabolic Boosters and Activators  for Cellulite Remover and Body Firmer, Anti- Muscle Fatigue Circadian Rhythm Balancer for Anti-Insomnia, Anti Addiction, Hormonal Balancer for Anti-Polycystic Ovary, Antioxidant rich vegetables for Anti-Ageing</p>"
         },
         {
           "image": "common/images/product.jpg",
