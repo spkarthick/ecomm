@@ -994,7 +994,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 	        },
 			generateCheckSum: function(data) {
 				return $http({ 
-					url: "http://localhost:7000/generatechecksum",
+					url: "http://youngandenergetic.com:7000/generatechecksum",
 					headers: {'content-type': 'application/json'},
 					data: data,
 					method: "POST"
