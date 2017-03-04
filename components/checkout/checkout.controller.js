@@ -15,6 +15,7 @@
         vm.billingInfo = {};
         vm.cart = moltin.Cart.Contents();
         vm.makePayment = function () {
+			vm.loading = true;
             moltin.Cart.Complete({
                 customer: {
                     first_name: vm.billingInfo.firstName,
@@ -62,6 +63,7 @@
                     // Something went wrong...
                 //});
             }, function (error) {
+				vm.loading = false;
                 // Something went wrong...
             });
         }

@@ -2633,6 +2633,11 @@ home *{
     bottom: 0px;
 }
 
+home .mission li {
+	padding-right: 25px;
+	height: 100px;
+}
+
 .padding-30 {
     padding: 0px 50px;
 }
@@ -2719,7 +2724,13 @@ button.btn:focus, button.btn:active {
     .navbar-brand {
         padding: 12px 15px;
     }
+	home .mission li {
+		padding-right: 15px;
+		height: auto;
+	}
 }
+
+
 productdetails img {
     width: 80%;
 }

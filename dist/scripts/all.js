@@ -854,6 +854,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
         vm.billingInfo = {};
         vm.cart = moltin.Cart.Contents();
         vm.makePayment = function () {
+			vm.loading = true;
             moltin.Cart.Complete({
                 customer: {
                     first_name: vm.billingInfo.firstName,
@@ -901,6 +902,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
                     // Something went wrong...
                 //});
             }, function (error) {
+				vm.loading = false;
                 // Something went wrong...
             });
         }
