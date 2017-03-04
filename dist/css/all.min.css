@@ -2559,6 +2559,10 @@ footer a {
 footer a:hover {
     color: #AFAFAF;
 }
+home .mission li{
+	margin-top: 15px;
+}
+
 .box-default {
     border: 1px solid #f1f1f1;
     padding: 20px;

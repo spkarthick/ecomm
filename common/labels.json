@@ -43,7 +43,7 @@
   "cartTitle": "Your Cart",
   "cartOrderSummaryTitle": "Order Summary",
   "cartCheckout": "Checkout",
-  "bannerText": "<h1 class='bannertitle text-left'>About Us</h1><div class='text-left'>Young and energetic was developed over 10 years of research on learning to balance the body through using dietetic principles. We use vegetable formulations to strengthen your body to fight different disease conditions.</div>",
+  "bannerText": "<h1 class='bannertitle text-left'>About Us</h1><div class='text-justify'>Young and energetic was developed over 10 years of research on learning to balance the body through using dietetic principles. We use vegetable formulations to strengthen your body to fight different disease conditions.</div>",
   "jumbotrons": [
 
     {
@@ -53,7 +53,7 @@
 
         {
           "image": "common/images/vegtables.jpg",
-          "desc": "<h4>How it works</h4><p>We formulate unprocessed vegetable powder Immuno Modulating Vegetables  for Anti-Hives and Urticaria, Anti-Arthritis, Anti Spinal Back Pain Metabolic Boosters and Activators  for Cellulite Remover and Body Firmer, Anti- Muscle Fatigue Circadian Rhythm Balancer for Anti-Insomnia, Anti Addiction, Hormonal Balancer for Anti-Polycystic Ovary, Antioxidant rich vegetables for Anti-Ageing</p>"
+          "desc": "<h4>How it works</h4><p><ol class='text-left'><li class='col-xs-12 col-sm-6 col-md-4'>We formulate unprocessed vegetable powder.</li><li class='col-xs-12 col-sm-6 col-md-4'>Immuno Modulating Vegetables  for Anti-Hives and Urticaria, Anti-Arthritis, Anti Spinal Back Pain.</li><li class='col-xs-12 col-sm-6 col-md-4'>Metabolic Boosters and Activators  for Cellulite Remover and Body Firmer, Anti- Muscle Fatigue.</li><li class='col-xs-12 col-sm-6 col-md-4'>Circadian Rhythm Balancer for Anti-Insomnia, Anti Addiction</li><li class='col-xs-12 col-sm-6 col-md-4'>Hormonal Balancer for Anti-Polycystic Ovary</li><li class='col-xs-12 col-sm-6 col-md-4'>Antioxidant rich vegetables for Anti-Ageing</li></ol></p>"
         },
         {
           "image": "common/images/product.jpg",
