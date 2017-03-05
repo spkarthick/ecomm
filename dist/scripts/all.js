@@ -854,6 +854,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
         vm.billingInfo = {};
         vm.cart = moltin.Cart.Contents();
         vm.makePayment = function () {
+			vm.loading = true;
             moltin.Cart.Complete({
                 customer: {
                     first_name: vm.billingInfo.firstName,
@@ -885,7 +886,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
             }, function (order) {
                 //moltin.Cart.Delete(function () {
 					
-                var form = '<form action="https://pguat.paytm.com/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value="Pentag28949300165860"/><input name="ORDER_ID" type="text" type="hidden" value="' + order.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.customer.data.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + order.totals.total.raw + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value="Retail"/><input name="WEBSITE" type="text" type="hidden" value="WEB_STAGING"/><input name="CALLBACK_URL" type="text" type="hidden" value="http://youngandenergetic.com:7000/payment"/></div></form>';
+                var form = '<form action="https://secure.paytm.in/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value="Pentag46972444763247"/><input name="ORDER_ID" type="text" type="hidden" value="' + order.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.customer.data.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + order.totals.total.raw + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value="Retail109"/><input name="WEBSITE" type="text" type="hidden" value="PentagWEB"/><input name="CALLBACK_URL" type="text" type="hidden" value="http://youngandenergetic.com:7000/payment"/></div></form>';
                 //$(form).appendTo('body').submit();
 				var unindexed_array = $(form).serializeArray();
 				var indexed_array = {};
@@ -901,6 +902,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
                     // Something went wrong...
                 //});
             }, function (error) {
+				vm.loading = false;
                 // Something went wrong...
             });
         }
