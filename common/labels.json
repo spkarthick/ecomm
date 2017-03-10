@@ -53,11 +53,11 @@
 
         {
           "image": "common/images/vegtables.jpg",
-          "desc": "<h4>How it works</h4><p><ol class='text-left'><li class='col-xs-12 col-sm-6 col-lg-4'>We formulate unprocessed vegetable powder.</li><li class='col-xs-12 col-sm-6 col-lg-4'>Immuno Modulating Vegetables  for Anti-Hives and Urticaria, Anti-Arthritis, Anti Spinal Back Pain.</li><li class='col-xs-12 col-sm-6 col-lg-4'>Metabolic Boosters and Activators  for Cellulite Remover and Body Firmer, Anti- Muscle Fatigue.</li><li class='col-xs-12 col-sm-6 col-lg-4'>Circadian Rhythm Balancer for Anti-Insomnia, Anti Addiction</li><li class='col-xs-12 col-sm-6 col-lg-4'>Hormonal Balancer for Anti-Polycystic Ovary</li><li class='col-xs-12 col-sm-6 col-lg-4'>Antioxidant rich vegetables for Anti-Ageing</li></ol></p>"
+          "desc": "<h4>How it works</h4><p><ol class='text-left'><li class='col-xs-12 col-sm-6'>We formulate unprocessed vegetable powder.</li><li class='col-xs-12 col-sm-6'>Immuno Modulating Vegetables  for Anti-Hives and Urticaria, Anti-Arthritis, Anti Spinal Back Pain.</li><li class='col-xs-12 col-sm-6'>Metabolic Boosters and Activators  for Cellulite Remover and Body Firmer, Anti- Muscle Fatigue.</li><li class='col-xs-12 col-sm-6'>Circadian Rhythm Balancer for Anti-Insomnia, Anti Addiction</li><li class='col-xs-12 col-sm-6'>Hormonal Balancer for Anti-Polycystic Ovary</li><li class='col-xs-12 col-sm-6'>Antioxidant rich vegetables for Anti-Ageing</li></ol></p>"
         },
         {
           "image": "common/images/product.jpg",
-          "desc": "<p></p><p><ol class='chemicals'><li class='col-xs-12 col-sm-6'><div>No Chemicals.</div></li><li class='col-xs-12 col-sm-6'><div>No Industrial Processing.</div></li><li class='col-xs-12 col-sm-6'><div>No Unknown Herbs.</div></li><li class='col-xs-12 col-sm-6'><div>No Preservatives.</div></li><li class='col-xs-12 col-sm-6'><div>Only Vegetable Balancers</div></li></ol></p><p></p><p class='col-xs-12 margin-top-30'><a class='btn btn-important' href='#/shop'>Take me to store &#8594;</a></p>"
+          "desc": "<p></p><p><ol class='chemicals text-left'><li class='col-xs-12 col-sm-6'><div>No Chemicals.</div></li><li class='col-xs-12 col-sm-6'><div>No Industrial Processing.</div></li><li class='col-xs-12 col-sm-6'><div>No Unknown Herbs.</div></li><li class='col-xs-12 col-sm-6'><div>No Preservatives.</div></li><li class='col-xs-12 col-sm-6'><div>Only Vegetable Balancers</div></li></ol></p><p></p><p class='col-xs-12 margin-top-30'><a class='btn btn-important' href='#/shop'>Take me to store &#8594;</a></p>"
         }
 
       ]

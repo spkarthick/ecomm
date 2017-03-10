@@ -2710,21 +2710,8 @@ button.btn:focus, button.btn:active {
     width: 200px;
 }
 
-home .mission .chemicals  {
-	-webkit-padding-start: 0px;
-}
-
 home .mission .chemicals li {
 	height: 45px;
-    line-height: 45px;
-    list-style: none;
-    text-align: center;
-}
-
-home .mission .chemicals li > div {
-	background: #aa5446;
-    color: #fff;
-    border: 1px solid rgba(0,0,0,0.22);
 }
 
 @media only screen and (max-width: 768px) {
@@ -2744,10 +2731,6 @@ home .mission .chemicals li > div {
 	home .mission li {
 		padding-right: 15px;
 		height: auto;
-	}
-	
-	home .mission .chemicals li > div {
-		font-size: 12px;
 	}
 }
 
