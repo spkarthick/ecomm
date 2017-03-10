@@ -2728,6 +2728,11 @@ home .mission .chemicals li {
     .navbar-brand {
         padding: 12px 15px;
     }
+	
+	.remove-padding-mobile { 
+		padding: 0px;
+	}
+	
 	home .mission li {
 		padding-right: 15px;
 		height: auto;

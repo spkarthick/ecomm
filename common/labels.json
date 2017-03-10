@@ -57,7 +57,7 @@
         },
         {
           "image": "common/images/product.jpg",
-          "desc": "<p></p><p><ol class='chemicals text-left'><li class='col-xs-12 col-sm-6'><div>No Chemicals.</div></li><li class='col-xs-12 col-sm-6'><div>No Industrial Processing.</div></li><li class='col-xs-12 col-sm-6'><div>No Unknown Herbs.</div></li><li class='col-xs-12 col-sm-6'><div>No Preservatives.</div></li><li class='col-xs-12 col-sm-6'><div>Only Vegetable Balancers</div></li></ol></p><p></p><p class='col-xs-12 margin-top-30'><a class='btn btn-important' href='#/shop'>Take me to store &#8594;</a></p>"
+          "desc": "<p></p><p><ol class='chemicals text-left'><li class='col-xs-6'><div>No Chemicals.</div></li><li class='col-xs-6'><div>No Industrial Processing.</div></li><li class='col-xs-6'><div>No Unknown Herbs.</div></li><li class='col-xs-6'><div>No Preservatives.</div></li><li class='col-xs-6'><div>Only Vegetable Balancers</div></li></ol></p><p></p><p class='col-xs-12 margin-top-30'><a class='btn btn-important' href='#/shop'>Take me to store &#8594;</a></p>"
         }
 
       ]
