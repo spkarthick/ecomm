@@ -164,6 +164,9 @@ home .mission .chemicals li {
         width: 100%;
         border-radius: 0px;
     }
+	.banner-text {
+		padding-right: 30px;
+	}
     .navbar-brand {
         padding: 12px 15px;
     }
