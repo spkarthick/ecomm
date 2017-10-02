@@ -1,8 +1,8 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-9">
-			<form name="customer" ng-show="!vm.billingInfo.firstName" class="col-md-5">
-				<label for="customerid">Customer Id *</label>
+			<form name="customer" ng-show="!vm.billingInfo.firstName" class="col-md-6">
+				<label for="customerid">Customer Id * (don't have a customer id ? <a href="#/contact">Make an appointment</a>)</label>
 				<input type="text" class="form-control" ng-model="vm.customerid" name="customerid" required placeholder="Customer Id" />
 				<span class="error small text-danger" ng-show="customer.customerid.$touched && (customer.customerid.$invalid || vm.invalidCustomerId)">Please enter a valid customer id</span>
 				<br/>
