@@ -24,6 +24,15 @@
 				debugger
 	                return res.data;
 	            });
+			},
+			getCustomer: function(id) {
+				return $http({ 
+					url: "http://youngandenergetic.com:7000/customer/" + id,
+					headers: {'content-type': 'application/json'},
+					method: "GET"
+				}).then(function (res) {
+	                return res.data;
+	            });
 			}
 	    };
 	}]);

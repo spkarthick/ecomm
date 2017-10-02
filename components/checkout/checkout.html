@@ -1,7 +1,14 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-9">
-            <form name="address" novalidate>
+			<form name="customer" ng-show="!vm.billingInfo.firstName" class="col-md-5">
+				<label for="customerid">Customer Id *</label>
+				<input type="text" class="form-control" ng-model="vm.customerid" name="customerid" required placeholder="Customer Id" />
+				<span class="error small text-danger" ng-show="customer.customerid.$touched && (customer.customerid.$invalid || vm.invalidCustomerId)">Please enter a valid customer id</span>
+				<br/>
+				<a class="btn btn-important" ng-disabled="customer.$invalid" ng-click="vm.checkCustomer()">Next</a>
+			</form>
+            <form name="address" novalidate ng-show="vm.billingInfo.firstName">
                 <div class="checkout-tab-bar row">
                     <div class="col-md-12 columns">
                         <h3>
@@ -24,17 +31,17 @@
                                 <div name="billing-info" class="row">
                                     <div class="col-sm-6 form-group">
                                         <label for="billing_firstName">First Name *</label>
-                                        <input type="text" class="form-control" ng-model="vm.billingInfo.firstName" name="billing_firstName" required placeholder="First Name" />
+                                        <input type="text" class="form-control" ng-model="vm.billingInfo.firstName" name="billing_firstName" required placeholder="First Name" disabled/>
                                         <span class="error small text-danger" ng-show="address.billing_firstName.$touched && address.billing_firstName.$invalid">Please enter your first name</span>
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label for="billing_lastName">Last Name *</label>
-                                        <input type="text" class="form-control" ng-model="vm.billingInfo.lastName" name="billing_lastName" required placeholder="Last Name" />
+                                        <input type="text" class="form-control" ng-model="vm.billingInfo.lastName" name="billing_lastName" required placeholder="Last Name" disabled/>
                                         <span class="error small text-danger" ng-show="address.billing_lastName.$touched && address.billing_lastName.$invalid">Please enter your last name</span>
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label for="billing_email">E-mail Address *</label>
-                                        <input type="email" class="form-control" ng-model="vm.billingInfo.email" name="billing_email" required placeholder="example@email.com" />
+                                        <input type="email" class="form-control" ng-model="vm.billingInfo.email" name="billing_email" required placeholder="example@email.com" disabled/>
                                         <span class="error small text-danger" ng-show="address.billing_email.$touched && address.billing_email.$invalid">Please enter a valid email address</span>
                                     </div>
                                     <div class="col-sm-6 form-group">
@@ -89,12 +96,12 @@
                                 <div name="shipping-info" class="row">
                                     <div class="col-sm-6 form-group">
                                         <label for="shipping_firstName">First Name *</label>
-                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.firstName" name="shipping_firstName" ng-disabled="vm.sameAddress" required placeholder="First Name" />
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.firstName" name="shipping_firstName" required placeholder="First Name" disabled/>
                                         <span class="error small text-danger" ng-show="address.shipping_firstName.$touched && address.shipping_firstName.$invalid">Please enter your first name</span>
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label for="shipping_lastName">Last Name *</label>
-                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.lastName" name="shipping_lastName" ng-disabled="vm.sameAddress" required placeholder="Last Name" />
+                                        <input type="text" class="form-control" ng-model="vm.shippingInfo.lastName" name="shipping_lastName" required placeholder="Last Name" disabled/>
                                         <span class="error small text-danger" ng-show="address.shipping_lastName.$touched && address.shipping_lastName.$invalid">Please enter your last name</span>
                                     </div>
                                     <div class="col-sm-6 form-group">

@@ -13,7 +13,22 @@
         vm.shippingInfo = {};
         vm.tempAddr = {};
         vm.billingInfo = {};
+		vm.customerid = '';
         vm.cart = moltin.Cart.Contents();
+		vm.checkCustomer = function () {
+			checkoutService.getCustomer(vm.customerid).then(function(data){
+				if(data.error) {
+					vm.invalidCustomerId = true;
+				}
+				else {
+					vm.billingInfo.firstName = data.firstName;
+					vm.billingInfo.lastName = data.lastName;
+					vm.billingInfo.email = data.email;
+					vm.shippingInfo.firstName = data.firstName;
+					vm.shippingInfo.lastName = data.lastName;
+				}
+			});
+		}
         vm.makePayment = function () {
 			vm.loading = true;
             moltin.Cart.Complete({
