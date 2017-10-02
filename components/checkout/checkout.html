@@ -1,12 +1,21 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-9">
-			<form name="customer" ng-show="!vm.billingInfo.firstName" class="col-md-6">
-				<label for="customerid">Customer Id * (don't have a customer id ? <a href="#/contact">Make an appointment</a>)</label>
-				<input type="text" class="form-control" ng-model="vm.customerid" name="customerid" required placeholder="Customer Id" />
-				<span class="error small text-danger" ng-show="customer.customerid.$touched && (customer.customerid.$invalid || vm.invalidCustomerId)">Please enter a valid customer id</span>
-				<br/>
-				<a class="btn btn-important" ng-disabled="customer.$invalid" ng-click="vm.checkCustomer()">Next</a>
+			<form name="customer" ng-show="!vm.billingInfo.firstName">
+				<div class="checkout-tab-bar row">
+                    <div class="col-md-12 columns">
+                        <h3>
+                            Enter your customer id
+                        </h3>
+                    </div>
+                </div>
+				<div class="col-md-6">
+					<label for="customerid">Customer Id * (don't have a customer id ? <a href="#/contact">Make an appointment</a>)</label>
+					<input type="text" class="form-control" ng-model="vm.customerid" name="customerid" required placeholder="Customer Id" />
+					<span class="error small text-danger" ng-show="customer.customerid.$touched && (customer.customerid.$invalid || vm.invalidCustomerId)">Please enter a valid customer id</span>
+					<br/>
+					<a class="btn btn-important" ng-disabled="customer.$invalid" ng-click="vm.checkCustomer()">Next</a>
+				</div>
 			</form>
             <form name="address" novalidate ng-show="vm.billingInfo.firstName">
                 <div class="checkout-tab-bar row">
