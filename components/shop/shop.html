@@ -2,23 +2,10 @@
     <div class="loading backdrop-color" ng-show="vm.productsLoading">
         <div class="loading-image"><i class="fa fa-refresh"></i></div>
     </div>
-    <h2 ng-if="vm.showFeatured" class="heading-font" ng-bind="::vm.labelService.labels.introTitle"></h2>
-    <p ng-if="vm.showFeatured" ng-bind="::vm.labelService.labels.introDesc"></p>
     <div class="col-md-12 box-top shop-height">
         <span class="title heading-font" ng-bind="::vm.labelService.labels.featuredProductsTitle"></span>
-        <div ng-if="vm.showFeatured" class="col-md-6 text-center product" ng-repeat="product in ::vm.products | limitTo: 2">
-            <img ng-src="{{::product.images[0].url.https}}">
-            <h3 ng-bind="::product.name"></h3>
-            <p class="small">
-                {{::product.price.data.raw.without_tax | currency: '&#8377;'}}
-            </p>
-            <p></p>
-            <p ng-bind="::product.description"></p>
-            <br>
-            <a href="#/product/{{::product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
-        </div>
-        <div ng-if="!vm.showFeatured" class="col-md-6 text-center product" ng-repeat="product in ::vm.products">
-            <img ng-src="{{::product.images[0].url.https}}">
+        <div class="col-md-6 text-center product" ng-repeat="product in ::vm.products">
+            <img ng-src="{{::vm.images[$index].link.href}}">
             <h3 ng-bind="::product.name"></h3>
             <p class="small">
             {{::product.price.data.raw.without_tax | currency: '&#8377;'}}
@@ -27,9 +14,6 @@
             <p ng-bind="::product.description"></p>
             <br>
             <a href="#/product/{{::product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
-        </div>
-        <div class="col-md-12">
-            <a ui-sref="shop" ng-show="vm.showFeatured">See more &#8594;</a>
         </div>
     </div>
 </div>

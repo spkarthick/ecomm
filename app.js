@@ -38,13 +38,14 @@
     .value("moltin", moltin.gateway({ client_id: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
 	
 	angular.element(document).ready(function () {
-	    
-	        moltin.Authenticate().then(function (data) {
+	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
+			moltin.Authenticate().then(function (data) {
 				moltin.Cart().Items().then(function(response){
 					angular.module("myApp").value("cart", response.data);
 					angular.bootstrap(document.body, ["myApp"]);
 				});
-	
+		
+			});
+		}]);
 	});
-	
 })();

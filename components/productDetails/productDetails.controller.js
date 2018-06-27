@@ -10,7 +10,9 @@
         
         vm.loading = false;
         shopService.getProducts($stateParams.productId).then(function(data) {
-			vm.product = data;
+		debugger;
+			vm.product = data.data;
+			vm.image = data.included.main_images[0].link.href;
 			moltin.Cart().Items().then(function(response){
 				vm.cart = response.data;
 				if (vm.cart.filter(function(item){return item.product_id === $stateParams.productId}).length) {

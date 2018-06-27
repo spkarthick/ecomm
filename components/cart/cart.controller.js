@@ -33,7 +33,7 @@
 		vm.getCartTotal = function () {
 		    var sum = 0;
 		    for (var i = 0; i < vm.cart.length; i++) {
-		        sum += vm.cart[i].value.amount;
+		        sum += vm.cart[i].value.amount * vm.cart[i].quantity;
 		    }
 		    return sum;
 		}

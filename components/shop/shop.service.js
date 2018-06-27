@@ -7,15 +7,15 @@
 		     getProducts: function (slug) {
 		         if (slug) {
 					var defer = $q.defer();
-		             moltin.Products.Get(slug).then(function(response){
-		                 defer.resolve(response.data);
+		             moltin.Products.With(["main_image"]).Get(slug).then(function(response){
+		                 defer.resolve(response);
 		             });
 					 return defer.promise;
 		         }
 		         else {
 		             var defer = $q.defer();
-		             moltin.Products.All().then(function(response){
-		                 defer.resolve(response.data);
+		             moltin.Products.With(["main_image"]).All().then(function(response){
+		                 defer.resolve(response);
 		             });
 		             return defer.promise;
 		         }

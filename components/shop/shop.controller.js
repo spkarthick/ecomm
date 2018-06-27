@@ -8,7 +8,8 @@
 		vm.labelService = labelService;
 		vm.productsLoading = true;
 		shopService.getProducts().then(function (products) {
-		    vm.products = products;
+		    vm.products = products.data;
+			vm.images = products.included.main_images;
 		    vm.productsLoading = false;
 		});
 	}]);

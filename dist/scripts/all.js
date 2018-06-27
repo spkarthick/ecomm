@@ -515,7 +515,8 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		vm.labelService = labelService;
 		vm.productsLoading = true;
 		shopService.getProducts().then(function (products) {
-		    vm.products = products;
+		    vm.products = products.data;
+			vm.images = products.included.main_images;
 		    vm.productsLoading = false;
 		});
 	}]);
@@ -530,15 +531,15 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		     getProducts: function (slug) {
 		         if (slug) {
 					var defer = $q.defer();
-		             moltin.Products.Get(slug).then(function(response){
-		                 defer.resolve(response.data);
+		             moltin.Products.With(["main_image"]).Get(slug).then(function(response){
+		                 defer.resolve(response);
 		             });
 					 return defer.promise;
 		         }
 		         else {
 		             var defer = $q.defer();
-		             moltin.Products.All().then(function(response){
-		                 defer.resolve(response.data);
+		             moltin.Products.With(["main_image"]).All().then(function(response){
+		                 defer.resolve(response);
 		             });
 		             return defer.promise;
 		         }
@@ -632,7 +633,9 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
         
         vm.loading = false;
         shopService.getProducts($stateParams.productId).then(function(data) {
-			vm.product = data;
+		debugger;
+			vm.product = data.data;
+			vm.image = data.included.main_images[0].link.href;
 			moltin.Cart().Items().then(function(response){
 				vm.cart = response.data;
 				if (vm.cart.filter(function(item){return item.product_id === $stateParams.productId}).length) {
@@ -789,7 +792,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		vm.getCartTotal = function () {
 		    var sum = 0;
 		    for (var i = 0; i < vm.cart.length; i++) {
-		        sum += vm.cart[i].value.amount;
+		        sum += vm.cart[i].value.amount * vm.cart[i].quantity;
 		    }
 		    return sum;
 		}
@@ -941,7 +944,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
             var sum = 0;
 			if(vm.cart) {
 				for (var i = 0; i < vm.cart.length; i++) {
-					sum += vm.cart[i].value.amount;
+					sum += vm.cart[i].value.amount * vm.cart[i].quantity;
 				}
 			}
             return sum;
@@ -1268,16 +1271,17 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
-	        moltin.Authenticate().then(function (data) {
+			moltin.Authenticate().then(function (data) {
 				moltin.Cart().Items().then(function(response){
 					angular.module("myApp").value("cart", response.data);
 					angular.bootstrap(document.body, ["myApp"]);
 				});
-	        });
-	    }]);
+		
+			});
+		}]);
 	});
-	
 })();
+
 (function() {
 	
 	var myApp = angular.module("myApp");
