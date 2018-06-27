@@ -6,14 +6,16 @@
 		 return {
 		     getProducts: function (slug) {
 		         if (slug) {
-		             return moltin.Product.Find({ slug: slug })[0];
+					var defer = $q.defer();
+		             moltin.Products.Get(slug).then(function(response){
+		                 defer.resolve(response.data);
+		             });
+					 return defer.promise;
 		         }
 		         else {
 		             var defer = $q.defer();
-		             moltin.Product.List(null, function (product) {
-		                 defer.resolve(product);
-		             }, function (error) {
-		                 defer.reject(error);
+		             moltin.Products.All().then(function(response){
+		                 defer.resolve(response.data);
 		             });
 		             return defer.promise;
 		         }

@@ -1,22 +1,22 @@
 <div class="jumbotron">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12" ng-if="!vm.cart.total_unique_items">
+            <div class="col-xs-12" ng-if="!vm.cart.length">
                 <h4 class="magin-top-50" ng-bind="::vm.labelService.labels.emptyCart"></h4>
                 <a ui-sref="shop" ng-bind="::vm.labelService.labels.continueShopping"></a>
             </div>
-            <div class="col-xs-12 magin-top-50" ng-if="vm.cart.total_unique_items">
+            <div class="col-xs-12 magin-top-50" ng-if="vm.cart.length">
                 <h4 ng-bind="::vm.labelService.labels.cartTitle"></h4>
                 <br/>
                 <ul class="list-group">
-                    <li class="list-group-item animate-repeat text-center" ng-repeat="(key, item) in vm.cart.contents">
+                    <li class="list-group-item animate-repeat text-center" ng-repeat="(key, item) in vm.cart">
                         <i class="fa fa-close" ng-click="vm.removeItem(key)"></i>
                         <table>
                             <tr>
                                 <td>
                                     <div class="productname">
                                         <img ng-src="{{::item.images[0].url.https}}" />
-                                        <div class="producttitle" ng-bind="::item.title"></div>
+                                        <div class="producttitle" ng-bind="::item.name"></div>
                                     </div>
                                 </td>
                                 <td class="text-center">

@@ -169,7 +169,7 @@
                 <h3>Items</h3>
                 <div>
                     <ul class="list-group">
-                        <li class="list-group-item low-padding animate-repeat" ng-repeat="(key, item) in vm.cart.contents">
+                        <li class="list-group-item low-padding animate-repeat" ng-repeat="(key, item) in vm.cart">
                             <table>
                                 <tr>
                                     <td style="width: 50%;">
@@ -180,9 +180,9 @@
                                     </td>
                                     <td style="font-size:12px;">
                                         <div style="float:right">
-                                            <span ng-bind="item.quantity"></span> X <span ng-bind="item.pricing.raw.without_tax | currency: '&#8377;'"></span>
+                                            <span ng-bind="item.quantity"></span> X <span ng-bind="item.price.amount | currency: '&#8377;'"></span>
                                             <div style="font-size:15px;color:#000;">
-                                                <span>{{item.pricing.raw.without_tax * item.quantity | currency: '&#8377;'}}</span>
+                                                <span>{{item.value.amount | currency: '&#8377;'}}</span>
                                             </div>
                                         </div>
                                     </td>
@@ -195,8 +195,8 @@
                     <div class="col-md-12 summarytitle" ng-bind="::vm.labelService.labels.cartOrderSummaryTitle"></div>
                 </div>
                 <div class="row no-margin">
-                    <div class="margin-top-10">Tax: <span>{{vm.getTax() | currency: '&#8377;'}}</span></div>
-                    <div class="carttotal">{{vm.getCartTotal() + vm.getTax() | currency: '&#8377;'}}</div>
+                    <!--<div class="margin-top-10">Tax: <span>{{vm.getTax() | currency: '&#8377;'}}</span></div>-->
+                    <div class="carttotal">{{vm.getCartTotal() | currency: '&#8377;'}}</div>
                 </div>
             </div>
         </div>

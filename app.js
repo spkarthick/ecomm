@@ -35,13 +35,15 @@
             $rootScope.loading = false;
         });
     }])
-    .value("moltin", new Moltin({ publicId: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
+    .value("moltin", moltin.gateway({ client_id: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
-	        moltin.Authenticate(function (data) {
-	            angular.module("myApp").value("cart", moltin.Cart.Contents());
-	            angular.bootstrap(document.body, ["myApp"]);
+	        moltin.Authenticate().then(function (data) {
+				moltin.Cart().Items().then(function(response){
+					angular.module("myApp").value("cart", response.data);
+					angular.bootstrap(document.body, ["myApp"]);
+				});
 	        });
 	    }]);
 	});

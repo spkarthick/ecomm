@@ -7,29 +7,25 @@
 		vm.name = "productDetails";
         vm.labelService = labelService;
         vm.quantity = 1;
-        vm.cart = moltin.Cart.Contents();
+        
         vm.loading = false;
-        vm.product = shopService.getProducts($stateParams.productId);
-        moltin.Cart.InCart(vm.product.id, function (item) {
-            if (item.in_cart) {
-                vm.cartItem = angular.copy(vm.product);
-                vm.quantity = vm.getExistingItem(vm.product).quantity;
-            }
-            $scope.$digest();
-        });
+        shopService.getProducts($stateParams.productId).then(function(data) {
+			vm.product = data;
+			moltin.Cart().Items().then(function(response){
+				vm.cart = response.data;
+				if (vm.cart.filter(function(item){return item.product_id === $stateParams.productId}).length) {
+					vm.cartItem = angular.copy(vm.product);
+					vm.quantity = vm.getExistingItem(vm.product).quantity;
+				}
+				$scope.$digest();
+			});
+		});
+		
 
         vm.getExistingItem = function (product) {
-            for (var i = 0; i < Object.keys(vm.cart.contents).length; i++) {
-                if (vm.cart.contents[Object.keys(vm.cart.contents)[i]].id == product.id)
-                    return vm.cart.contents[Object.keys(vm.cart.contents)[i]];
-            }
-            return null;
-        }
-
-        vm.getExistingItemId = function (product) {
-            for (var i = 0; i < Object.keys(vm.cart.contents).length; i++) {
-                if (vm.cart.contents[Object.keys(vm.cart.contents)[i]].id == product.id)
-                    return Object.keys(vm.cart.contents)[i];
+            for (var i = 0; i < Object.keys(vm.cart).length; i++) {
+                if (vm.cart[Object.keys(vm.cart)[i]].product_id == product.id)
+                    return vm.cart[Object.keys(vm.cart)[i]];
             }
             return null;
         }
@@ -37,28 +33,26 @@
         vm.updateCart = function (product) {
             vm.loading = true;
             if(vm.cartItem)
-                moltin.Cart.Update(vm.getExistingItemId(vm.product), {
-                    quantity: vm.quantity
-                }, function (item) {
-                    vm.cart = moltin.Cart.Contents();
-                    $rootScope.$broadcast("cartChange", vm.cart);
-                    vm.loading = false;
-                    $scope.$digest();
-                }, function (error) {
-                    vm.loading = false;
+                moltin.Cart().UpdateItemQuantity(vm.getExistingItem(vm.product).id, vm.quantity).then(function (item) {
+                    moltin.Cart().Items().then(function(response){
+						vm.cart = response.data;
+						$rootScope.$broadcast("cartChange", vm.cart);
+						vm.loading = false;
+						$scope.$digest();
+					});
                 });
-            else {
-                //vm.product.quantity = vm.quantity;
-                vm.cartItem = angular.copy(vm.product);
-                moltin.Cart.Insert(vm.product.id, vm.quantity, null, function (cart) {
-                    vm.cart = moltin.Cart.Contents();
-                    $rootScope.$broadcast("cartChange", vm.cart);
-                    vm.loading = false;
-                    $scope.$digest();
-                }, function () {
-                    vm.loading = false;
-                });
-            }
+			else {
+				//vm.product.quantity = vm.quantity;
+				vm.cartItem = angular.copy(vm.product);
+				moltin.Cart().AddProduct(vm.product.id, vm.quantity).then(function (cart) {
+					moltin.Cart().Items().then(function(response){
+						vm.cart = response.data;
+						$rootScope.$broadcast("cartChange", vm.cart);
+						vm.loading = false;
+						$scope.$digest();
+					});
+				});
+			}
         }
 	}]);
 	
