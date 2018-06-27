@@ -5,3 +5,10 @@ shop>.jumbotron {
 .shop-height {
     min-height: 650px;
 }
+
+.text-overflow-shop {
+	height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
