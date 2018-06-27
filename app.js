@@ -38,12 +38,10 @@
     .value("moltin", new Moltin({ publicId: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
 	
 	angular.element(document).ready(function () {
-	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
-	        moltin.Authenticate(function (data) {
-	            angular.module("myApp").value("cart", moltin.Cart.Contents());
+	    
 	            angular.bootstrap(document.body, ["myApp"]);
-	        });
-	    }]);
+	
+	
 	});
 	
 })();
