@@ -2587,7 +2587,6 @@ home .mission li{
 }
 .product {
     margin: 30px 0px;
-    min-height: 650px;
 }
 
 .jumbotron {
@@ -2610,9 +2609,6 @@ home *{
 .onsale {
     padding-top: 50px;
 	margin-bottom: 35px;
-}
-.onsale img {
-    width: 70%;
 }
 .jumbotron {
     padding-bottom: 70px;
@@ -2767,8 +2763,28 @@ shop>.jumbotron {
     position: relative;
 }
 
+shop img.img-padding {
+	padding: 20% 20% 0px 20%;
+}
+
 .shop-height {
     min-height: 650px;
+}
+
+.shop-height a.product-title, .shop-height a.product-title:focus, .shop-height a.product-title:hover {
+	color: inherit;
+}
+.carousel-control.right , .carousel-control.left{
+	background-image:none;
+	color: #0a0a0a;
+}
+
+.banner-carousel .carousel-control {
+	display:none;
+}
+shop select {
+    margin: auto;
+    min-width: 50px;
 }
 
 .text-overflow-shop {

@@ -495,14 +495,14 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 	
 	var module = angular.module("shop", ["ui.router"]);
 	
-	module.config(["$stateProvider", function($stateProvider) {
+	module.config(["$stateProvider","$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state({
 			name: "shop",
 			url: "/shop",
 			template: "<shop></shop>"
 		});
+		$urlRouterProvider.otherwise("/shop");
 	}]);
-	
 	
 })();
 (function(){
@@ -516,9 +516,29 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		vm.productsLoading = true;
 		shopService.getProducts().then(function (products) {
 		    vm.products = products.data;
-			vm.images = products.included.main_images;
+			vm.images = products.included.files;
+			vm.categories = products.included.categories;
+			vm.selectedCategory = "All";
 		    vm.productsLoading = false;
 		});
+	}]);
+	
+	module.filter("productFilter", ["$filter", function($filter) {
+		return function(data, query) {
+			if(data) {
+				if(query !== "All") {
+					var filtered = [];
+					filtered = data.filter(function(product) {
+						return product.relationships.categories.data[0].id === query;
+					});
+					return filtered;
+				}
+				return data;
+			}
+			else {
+				return [];
+			}
+		}
 	}]);
 	
 })();
@@ -531,14 +551,14 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		     getProducts: function (slug) {
 		         if (slug) {
 					var defer = $q.defer();
-		             moltin.Products.With(["main_image"]).Get(slug).then(function(response){
+		             moltin.Products.With(["files"]).Get(slug).then(function(response){
 		                 defer.resolve(response);
 		             });
 					 return defer.promise;
 		         }
 		         else {
 		             var defer = $q.defer();
-		             moltin.Products.With(["main_image"]).All().then(function(response){
+		             moltin.Products.With(["files","categories"]).All().then(function(response){
 		                 defer.resolve(response);
 		             });
 		             return defer.promise;
@@ -563,26 +583,25 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 })();
 (function(){
 	
-	var module = angular.module("home", ["ui.router"]);
+	var module = angular.module("custom", ["ui.router"]);
 	
 	module.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state({
-			name: "home",
-			url: "/home",
-			template: "<home products='vm.products'></home>"
+			name: "custom",
+			url: "/custom",
+			template: "<custom products='vm.products'></custom>"
 		});
-        $urlRouterProvider.otherwise("/home");
 	}]);
 	
 	
 })();
 (function(){
 	
-	var module = angular.module("home");
+	var module = angular.module("custom");
 	
-	module.controller("homeController", ["homeService", "labelService", "cart", function(homeService, labelService, cart) {
+	module.controller("customController", ["customService", "labelService", "cart", function(customService, labelService, cart) {
 		var vm = this;
-		vm.name = "home";
+		vm.name = "custom";
         vm.labelService = labelService; 
         vm.cart = cart;
 	}]);
@@ -590,19 +609,19 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 })();
 (function(){
 	
-	var module = angular.module("home");
+	var module = angular.module("custom");
 	
-	module.factory("homeService", ["$http", function($http) {
+	module.factory("customService", ["$http", function($http) {
 		 return {};
 	}]);
 	
 })();
 (function(){
-	var module = angular.module("home");
+	var module = angular.module("custom");
 	
-	module.component("home", {
-		templateUrl: "components/home/home.html",
-        controller: "homeController",
+	module.component("custom", {
+		templateUrl: "components/custom/custom.html",
+        controller: "customController",
         controllerAs: "vm",
         bindToController: true
 	});
@@ -635,7 +654,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
         shopService.getProducts($stateParams.productId).then(function(data) {
 		debugger;
 			vm.product = data.data;
-			vm.image = data.included.main_images[0].link.href;
+			vm.images = data.included.files;
 			moltin.Cart().Items().then(function(response){
 				vm.cart = response.data;
 				if (vm.cart.filter(function(item){return item.product_id === $stateParams.productId}).length) {
@@ -1238,7 +1257,7 @@ d.parentNode.scrollTop=d.offsetTop;break;default:c&&P.$apply(function(){angular.
 		"ngAnimate",
         "ngSanitize",
 		"header",
-		"home",
+		"custom",
         "productDetails",
         "shop",
         "contact",

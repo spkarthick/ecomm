@@ -1,12 +1,12 @@
 <style>home .mission li {height: 30px;}</style>
-<div class="row">
+<!--<div class="row">
     <div class="col-xs-12 banner">
         <img ng-src="{{vm.labelService.labels.bannerImage}}" />
         <div class="banner-text" ng-bind-html="::vm.labelService.labels.bannerText">
         </div>
         <div class="banner-blur" style="background: url({{vm.labelService.labels.bannerImage}});"></div>
     </div>
-</div>
+</div>-->
 <div class="jumbotron row onsale box-default text-center mission margin-top-50" ng-repeat="item in ::vm.labelService.labels.jumbotrons">
     <h3 ng-bind="::item.title"></h3>
     <p class="space-bottom" ng-bind="::item.desc">Finding a way to serve eachother accross the world.</p>
@@ -14,9 +14,10 @@
         <div class="col-md-6 no-padding" ng-if="desc.type !=='full'" ng-class="{'col-md-push-6': $index%2 != 0}">
             <img ng-src="{{::desc.image}}">
         </div>
-<div ng-if="desc.type ==='full'" class="col-xs-12" ng-bind-html="::desc.desc"></div>
+		<div ng-if="desc.type ==='full'" class="col-xs-12" ng-bind-html="::desc.desc"></div>
         <div ng-if="desc.type !== 'full'" class="col-md-6 padding-30 remove-padding-mobile" ng-bind-html="::desc.desc" ng-class="{'col-md-pull-6': $index%2 != 0}"></div>
-    </div> </div>
+    </div> 
+</div>
 <style>
 .timeline {
 position: relative;

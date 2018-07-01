@@ -7,11 +7,15 @@
                     <a ui-sref="shop"><span><i class="fa fa-shopping-bag"></i></span></a>
                     <a ui-sref="contact"><span><i class="fa fa-address-card"></i></span></a>
                     <a ui-sref="cart"><span class="cartmob" data-cartcount="{{vm.cart.length || ''}}"><i class="fa fa-shopping-cart"></i></span></a>
+					<a href="http://blog.youngandenergetic.com" target="_blank"><span><i class="fa fa-newspaper-o"></i></span></a>
                 </div>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li ng-repeat="item in ::vm.labelService.labels.header.items" class="{{::item.class}}" data-cartcount="({{vm.cart.length || 0}})" ng-show="item.state != 'checkout' || vm.cart.length"><a ui-sref="{{::item.state}}" ng-bind="::item.label"></a></li>
+                    <li ng-repeat="item in ::vm.labelService.labels.header.items" class="{{::item.class}}" data-cartcount="({{vm.cart.length || 0}})" ng-show="item.state != 'checkout' || vm.cart.length">
+						<a ui-sref="{{::item.state}}" ng-if="::!item.isExternal" ng-bind="::item.label"></a>
+						<a href="{{::item.state}}" target="_blank" ng-if="::item.isExternal" ng-bind="::item.label"></a>
+					</li>
                 </ul>
             </div>
         </div>

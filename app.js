@@ -6,7 +6,7 @@
 		"ngAnimate",
         "ngSanitize",
 		"header",
-		"home",
+		"custom",
         "productDetails",
         "shop",
         "contact",
