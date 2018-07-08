@@ -2832,6 +2832,9 @@ productdetails .carousel img {
 
 .productcarousel .item>div img{
     display: inline;
+}
+
+productdetails .productcarousel .item>div img {
     cursor: zoom-in;
 }
 

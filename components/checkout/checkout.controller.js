@@ -34,7 +34,7 @@
 		}
         vm.makePayment = function () {
             vm.loading = true;
-            moltin.Customers.Create({
+            /*moltin.Customers.Create({
                 name: vm.billingInfo.firstName + " " + vm.billingInfo.lastName,
                 email: vm.billingInfo.email
             }).then(function(customer) {
@@ -44,8 +44,11 @@
                     vm.checkout(customer.id);
                 else
                     vm.loading = true;
+            });*/
+            vm.checkout({
+                name: vm.billingInfo.firstName + " " + vm.billingInfo.lastName,
+                email: vm.billingInfo.email
             });
-            
         }
         vm.checkout = function(data) {
             moltin.Cart().Checkout(data, {
