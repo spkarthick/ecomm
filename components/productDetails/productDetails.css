@@ -2,10 +2,6 @@ productdetails .carousel img {
     width: 80%;
 }
 
-productdetails {
-    color: #A1A1A1;
-}
-
 .productcarousel .carousel-indicators li.active{
     background-color: #333;
 }

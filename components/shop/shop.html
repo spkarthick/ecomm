@@ -37,7 +37,7 @@
           <p class="small">
           {{::product.price[0].amount | currency: '&#8377;'}}
           </p>
-          <p ng-bind="::product.description" class="text-overflow-shop"></p>
+          <p ng-bind-html="::product.description" class="text-overflow-shop"></p>
           <a href="#/product/{{::product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
         </div>
         <div ng-if="vm.selectedCategory == 'Personalize your Nutrients'"><custom></custom></div>
