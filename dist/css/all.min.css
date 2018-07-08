@@ -2813,10 +2813,6 @@ productdetails .carousel img {
     width: 80%;
 }
 
-productdetails {
-    color: #A1A1A1;
-}
-
 .productcarousel .carousel-indicators li.active{
     background-color: #333;
 }
@@ -2889,11 +2885,19 @@ shop select {
     min-width: 50px;
 }
 
-.text-overflow-shop, .shop-height a.product-title{
-	height: 25px;
+.text-overflow-shop, .shop-height a.product-title, .text-overflow-shop blockquote{
+	height: 45px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+shop blockquote {
+    margin: 0px;
+}
+
+shop p.small {
+    margin-bottom: 0px;
 }
 .full-jumbotron {
     height: 240px;
