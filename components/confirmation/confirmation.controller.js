@@ -9,13 +9,12 @@
 		vm.message = confirmationService[$stateParams.status];
 		vm.transactionId = $stateParams.transactionId;
 		vm.orderId = $stateParams.orderId;
+		vm.cart = [];
 		if($stateParams.status == "success") {
-			moltin.Cart.Delete(function() {
-				angular.module("myApp").value("cart", moltin.Cart.Contents());
+			moltin.Cart().Delete().then(function() {
 				$rootScope.$broadcast("cartChange", vm.cart);
 				$scope.$digest();
 			}, function(error) {
-				angular.module("myApp").value("cart", moltin.Cart.Contents());
 				$rootScope.$broadcast("cartChange", vm.cart);
 				$scope.$digest();
 			});
