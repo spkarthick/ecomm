@@ -3,14 +3,16 @@
 	var module = angular.module("productDetails");
 	
 	module.controller("productDetailsController", ["$filter", "$scope", "$rootScope", "$stateParams", "productDetailsService", "labelService", "moltin", "cart", "shopService", function ($filter, $scope, $rootScope, $stateParams, productDetailsService, labelService, moltin, cart, shopService) {
+		
+		$scope.$on("$destroy", function() {
+			$rootScope.openModal = false;
+		});
 		var vm = this;
 		vm.name = "productDetails";
         vm.labelService = labelService;
         vm.quantity = 1;
-        
-        vm.loading = false;
+        vm.loading = true;
         shopService.getProducts($stateParams.productId).then(function(data) {
-		debugger;
 			vm.product = data.data;
 			vm.images = data.included.files;
 			moltin.Cart().Items().then(function(response){
@@ -19,10 +21,18 @@
 					vm.cartItem = angular.copy(vm.product);
 					vm.quantity = vm.getExistingItem(vm.product).quantity;
 				}
+				vm.loading = false;
 				$scope.$digest();
 			});
 		});
-		
+
+		vm.openModal = function (id) {
+			debugger
+			$rootScope.modalImage=$filter("filter")(vm.images,{
+				'id': id
+			})[0].link.href;
+			$rootScope.openModal = true;
+		}
 
         vm.getExistingItem = function (product) {
             for (var i = 0; i < Object.keys(vm.cart).length; i++) {

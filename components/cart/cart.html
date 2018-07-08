@@ -9,17 +9,15 @@
                 <h4 ng-bind="::vm.labelService.labels.cartTitle"></h4>
                 <br/>
                 <ul class="list-group">
-                    <li class="list-group-item animate-repeat text-center" ng-repeat="(key, item) in vm.cart">
+                    <li class="list-group-item animate-repeat" ng-repeat="(key, item) in vm.cart">
                         <i class="fa fa-close" ng-click="vm.removeItem(key)"></i>
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="productname">
-                                        <img ng-src="{{::item.image.href}}" />
-                                        <div class="producttitle" ng-bind="::item.name"></div>
-                                    </div>
-                                </td>
-                                <td class="text-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <img ng-src="{{::item.image.href}}" />
+                                    <div class="producttitle" ng-bind="::item.name"></div>
+                                </div>
+                                <div class="col-xs-7">
                                     <div class="input-group">
                                         <span class="input-group-btn" ng-click="vm.updateQuantity(key, item.quantity, 1)">
                                             <button class="btn btn-default" type="button"><i class="fa fa-plus"></i></button>
@@ -29,12 +27,12 @@
                                             <button class="btn btn-default" type="button"><i class="fa fa-minus"></i></button>
                                         </span>
                                     </div>
-                                    <div class="margin-top-30">
-                                        <span>{{item.pricing.raw.without_tax * item.quantity | currency: '&#8377;'}}</span>
+                                    <div class="margin-top-10">
+                                        <span>{{item.value.amount * item.quantity | currency: '&#8377;'}}</span>
                                     </div>
-                                </td>
-                            </tr>
-                        </table>
+                                </div>
+                            </div>
+                        </div>
                         <div class="loading backdrop-color" ng-show="item.updating">
                             <div class="loading-image"><i class="fa fa-refresh"></i></div>
                         </div>

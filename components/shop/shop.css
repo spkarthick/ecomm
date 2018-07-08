@@ -3,7 +3,7 @@ shop>.jumbotron {
 }
 
 shop img.img-padding {
-	padding: 20% 20% 0px 20%;
+	padding: 0px 20%;
 }
 
 .shop-height {
@@ -17,6 +17,18 @@ shop img.img-padding {
 	background-image:none;
 	color: #0a0a0a;
 }
+.productcarousel.nofixed {
+    max-width: 250px;
+    margin: auto;
+}
+.productcarousel.nofixed .item>div {
+    line-height: 250px;
+    min-height: 250px;
+}
+
+.productcarousel.nofixed .carousel-indicators {
+    bottom: -30px;
+}
 
 .banner-carousel .carousel-control {
 	display:none;
@@ -26,7 +38,7 @@ shop select {
     min-width: 50px;
 }
 
-.text-overflow-shop {
+.text-overflow-shop, .shop-height a.product-title{
 	height: 25px;
     white-space: nowrap;
     text-overflow: ellipsis;

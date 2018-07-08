@@ -1,18 +1,15 @@
-<div class="jumbotron text-center">
+<div class="container">
     <div class="row">
-        <div class="col-md-7">
-			<div style="width:400px; margin:auto;">
-				<div uib-carousel ng-if="vm.product.relationships.files.data.length" active="vm.product.active">
-				  <div uib-slide ng-repeat="image in vm.product.relationships.files.data" index="$index">
-					<img ng-src="{{(vm.images | filter:{'id': image.id})[0].link.href}}" class="img-responsive" style="margin:auto;padding: 20%;">
-				  </div>
-				</div>
-			</div>
+        <div class="col-md-4">
+            <div uib-carousel class="productcarousel" active="vm.product.active">
+                <div uib-slide ng-repeat="image in vm.product.relationships.files.data" index="$index" ng-click="vm.openModal(image.id)">
+                <img ng-src="{{(vm.images | filter:{'id': image.id})[0].link.href}}" class="img-responsive" style="margin:auto;padding: 20%;">
+                </div>
+            </div>
         </div>
-        <div class="col-md-5 text-left padding-side-30px">
-            <h4 class="item-title" ng-bind="::vm.product.name"></h4>
-            <p><h3><span ng-bind="::vm.product.price[0].amount | currency: '&#8377;'"></span></h3></p>
-            <br/>
+        <div class="col-md-7 col-md-offset-1 text-left padding-side-30px">
+            <h2 class="item-title" ng-bind="::vm.product.name"></h2>
+            <p><h4><span ng-bind="::vm.product.price[0].amount | currency: '&#8377;'"></span></h4></p>
             <div style="width:120px;">
                 <div class="input-group">
                     <span class="input-group-btn" ng-click="vm.quantity=vm.quantity+1">
@@ -30,12 +27,12 @@
                 <button ng-if="!vm.cartItem" class="btn btn-important" ng-bind="::vm.labelService.labels.productBuyNow" ng-click="vm.updateCart()"></button>
                 <button ng-if="vm.cartItem" class="btn btn-important" ng-bind="::vm.labelService.labels.productUpdateNow" ng-click="vm.updateCart()"></button>
             </p>
-			<br/>
-            <p ng-bind="::vm.product.description"></p>
-            <br/>
         </div>
         <div class="loading backdrop-color" ng-show="vm.loading">
             <div class="loading-image"><i class="fa fa-refresh"></i></div>
         </div>
+    </div>
+    <div class="row padding-side-30px margin-top-10">
+        <p ng-bind-html="::vm.product.description"></p>
     </div>
 </div>

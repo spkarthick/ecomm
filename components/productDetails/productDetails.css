@@ -1,9 +1,31 @@
-productdetails img {
+productdetails .carousel img {
     width: 80%;
 }
 
 productdetails {
     color: #A1A1A1;
+}
+
+.productcarousel .carousel-indicators li.active{
+    background-color: #333;
+}
+
+.productcarousel .carousel-indicators li{
+    border-color: #333;
+}
+
+.productcarousel .item>div,productdetails .carousel{
+    min-height: 360px;
+    max-width: 380px;
+    margin: auto;
+}
+.productcarousel .item>div {
+    line-height: 360px;
+}
+
+.productcarousel .item>div img{
+    display: inline;
+    cursor: zoom-in;
 }
 
 .item-title{

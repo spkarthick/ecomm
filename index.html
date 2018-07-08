@@ -64,5 +64,18 @@ src="https://www.facebook.com/tr?id=1668142413261997&ev=PageView
     <header></header>
     <div ui-view></div>
     <footer></footer>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal-custom ng-hide" ng-show="$root.openModal">
+
+            <!-- The Close Button -->
+            <span class="close" ng-click="$root.openModal = false">&times;</span>
+            
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" ng-src="{{$root.modalImage}}">
+            
+            <!-- Modal Caption (Image Text) -->
+            <div class="caption"></div>
+        </div>
 </body>
 </html>

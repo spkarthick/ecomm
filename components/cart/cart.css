@@ -1,5 +1,5 @@
 cart .list-group img {
-    width: 100%;
+    height: 100px;
 }
 
 .no-margin {
@@ -8,6 +8,7 @@ cart .list-group img {
 
 cart .list-group .input-group {
     width: 115px;
+    margin-top: 40px;
 }
 
 cart .list-group .producttitle {
@@ -50,8 +51,8 @@ cart .list-group .list-group-item>div {
 .list-group-item {
     width: auto;
     display: inline-block;
-    padding-right: 70px;
     margin-right: 2%;
+    width: 320px;
 }
 
 .summarytitle {
