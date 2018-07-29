@@ -27,6 +27,7 @@ gulp.task('compress', function () {
         'lib/angular-animate/angular-animate.min.js',
         'lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
         'lib/angular-ui-router/release/angular-ui-router.min.js',
+		'node_modules/angular-lazy-img/dist/angular-lazy-img.min.js',
         'components/header/header.js',
         'components/header/header.controller.js',
         'components/header/header.service.js',

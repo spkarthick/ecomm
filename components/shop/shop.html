@@ -2,10 +2,19 @@
   <div uib-slide index="0">
 	<img src="resources/01.JPG" class="img-responsive">
   </div>
+  <div uib-slide index="1">
+	<img src="resources/02.PNG" class="img-responsive">
+  </div>
+  <div uib-slide index="2">
+	<img src="resources/03.PNG" class="img-responsive">
+  </div>
 </div>
 <div uib-carousel active="vm.active" class="banner-carousel visible-xs" interval="3000">
   <div uib-slide index="0">
-	<img src="resources/01_mobile.jpg" class="img-responsive" style="margin:auto;">
+	<img src="resources/01_mobile.PNG" class="img-responsive" style="margin:auto;">
+  </div>
+  <div uib-slide index="1">
+	<img src="resources/02_mobile.PNG" class="img-responsive" style="margin:auto;">
   </div>
 </div>
 <div class="jumbotron row onsale text-center">
@@ -30,7 +39,7 @@
 			
           <div uib-carousel ng-if="product.relationships.files.data.length" class="productcarousel nofixed" active="product.active">
             <div uib-slide ng-repeat="image in product.relationships.files.data" index="$index">
-            <img ng-src="{{(vm.images | filter:{'id': image.id})[0].link.href}}" class="img-responsive img-padding" style="margin:auto;">
+            <img lazy-img="{{(vm.images | filter:{'id': image.id})[0].link.href}}" class="img-responsive img-padding" style="margin:auto;">
             </div>
           </div>
           <a href="#/product/{{::product.id}}" class="product-title"><h3 ng-bind="::product.name"></h3></a>
