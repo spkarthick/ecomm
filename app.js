@@ -35,7 +35,7 @@
             $rootScope.loading = false;
         });
     }])
-    .value("moltin", moltin.gateway({ client_id: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
+    .value("moltin", moltin.gateway({ client_id: '1XjDDYWRpObAwlAbFxkjsd1BF8wRO0bxQY5B8VkG2b' }));
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {

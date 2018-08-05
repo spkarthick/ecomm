@@ -951,7 +951,7 @@ angular.module("angularLazyImg",[]),angular.module("angularLazyImg").factory("La
             }).then(function (order) {
                 //moltin.Cart.Delete(function () {
                     
-                var form = '<form action="https://secure.paytm.in/oltp-web/processTransaction" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value="Pentag46972444763247"/><input name="ORDER_ID" type="text" type="hidden" value="' + order.data.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.data.customer.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + vm.getCartTotal() + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value="Retail109"/><input name="WEBSITE" type="text" type="hidden" value="PentagWEB"/><input name="CALLBACK_URL" type="text" type="hidden" value="http://youngandenergetic.com:7000/payment"/></div></form>';
+                var form = '<form action="https://pguat.paytm.com/oltp-web/processTransaction?orderid='+ order.data.id +'" method="POST"><div><input name="REQUEST_TYPE" type="text" type="hidden" value="DEFAULT"/><input name="MID" type="text" type="hidden" value="Pentag28949300165860"/><input name="ORDER_ID" type="text" type="hidden" value="' + order.data.id + '"/><input name="CUST_ID" type="text" type="hidden" value="' + order.data.customer.id + '"/><input name="TXN_AMOUNT" type="text" type="hidden" value="' + vm.getCartTotal() + '"/><input name="CHANNEL_ID" type="text" type="hidden" value="WEB"/><input name="INDUSTRY_TYPE_ID" type="text" type="hidden" value="Retail"/><input name="WEBSITE" type="text" type="hidden" value="WEB_STAGING"/><input name="CALLBACK_URL" type="text" type="hidden" value="http://staging.youngandenergetic.com:9000/payment"/></div></form>';
                 //$(form).appendTo('body').submit();
                 var unindexed_array = $(form).serializeArray();
                 var indexed_array = {};
@@ -1060,7 +1060,7 @@ angular.module("angularLazyImg",[]),angular.module("angularLazyImg").factory("La
 	        },
 			generateCheckSum: function(data) {
 				return $http({ 
-					url: "http://youngandenergetic.com:7000/generatechecksum",
+					url: "http://staging.youngandenergetic.com:9000/generatechecksum",
 					headers: {'content-type': 'application/json'},
 					data: data,
 					method: "POST"
@@ -1071,7 +1071,7 @@ angular.module("angularLazyImg",[]),angular.module("angularLazyImg").factory("La
 			},
 			getCustomer: function(id) {
 				return $http({ 
-					url: "http://youngandenergetic.com:7000/customer/" + id,
+					url: "http://staging.youngandenergetic.com:9000/customer/" + id,
 					headers: {'content-type': 'application/json'},
 					method: "GET"
 				}).then(function (res) {
@@ -1316,7 +1316,7 @@ angular.module("angularLazyImg",[]),angular.module("angularLazyImg").factory("La
             $rootScope.loading = false;
         });
     }])
-    .value("moltin", moltin.gateway({ client_id: 'McSU5Se3OrwPcgKGn3dDJ7wpIVUpzyO88ynSPgyj1G' }));
+    .value("moltin", moltin.gateway({ client_id: '1XjDDYWRpObAwlAbFxkjsd1BF8wRO0bxQY5B8VkG2b' }));
 	
 	angular.element(document).ready(function () {
 	    angular.injector(["myApp"]).invoke(["moltin", function (moltin) {
