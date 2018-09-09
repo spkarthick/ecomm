@@ -16,7 +16,7 @@
 	        },
 			generateCheckSum: function(data) {
 				return $http({ 
-					url: "http://youngandenergetic.com:7000/generatechecksum",
+					url: "https://www.youngandenergetic.com:7000/generatechecksum",
 					headers: {'content-type': 'application/json'},
 					data: data,
 					method: "POST"
@@ -27,7 +27,7 @@
 			},
 			getCustomer: function(id) {
 				return $http({ 
-					url: "http://youngandenergetic.com:7000/customer/" + id,
+					url: "https://www.youngandenergetic.com:7000/customer/" + id,
 					headers: {'content-type': 'application/json'},
 					method: "GET"
 				}).then(function (res) {
