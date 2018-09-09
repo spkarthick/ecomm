@@ -2963,8 +2963,8 @@ cart .list-group .list-group-item>div {
 .list-group-item .fa-close {
     position: absolute;
     cursor:pointer;
-    right: 20px;
-    top: 20px;
+    right: 5px;
+    top: 5px;
 }
 .list-group-item .productname { 
 	width:180px;
