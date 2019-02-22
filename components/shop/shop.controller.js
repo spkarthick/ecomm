@@ -11,7 +11,7 @@
 		    vm.products = products.data;
 			vm.images = products.included.files;
 			vm.categories = products.included.categories;
-			vm.selectedCategory = "All";
+			vm.selectedCategory = "Personalize your Nutrients";
 		    vm.productsLoading = false;
 		});
 	}]);

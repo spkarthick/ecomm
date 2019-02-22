@@ -1,19 +1,25 @@
 <div uib-carousel active="vm.active" class="banner-carousel hidden-xs" interval="3000">
   <div uib-slide index="0">
-	<img src="resources/01.JPG" class="img-responsive">
+  <img src="resources/04.PNG" class="img-responsive">
   </div>
   <div uib-slide index="1">
-	<img src="resources/02.PNG" class="img-responsive">
+	<img src="resources/01.JPG" class="img-responsive">
   </div>
   <div uib-slide index="2">
+	<img src="resources/02.PNG" class="img-responsive">
+  </div>
+  <div uib-slide index="3">
 	<img src="resources/03.PNG" class="img-responsive">
   </div>
 </div>
 <div uib-carousel active="vm.mobactive" class="banner-carousel visible-xs" interval="3000">
   <div uib-slide index="0">
-	<img src="resources/01_mobile.PNG" class="img-responsive" style="margin:auto;">
+    <img src="resources/03_mobile.PNG" class="img-responsive" style="margin:auto;">
   </div>
   <div uib-slide index="1">
+	<img src="resources/01_mobile.PNG" class="img-responsive" style="margin:auto;">
+  </div>
+  <div uib-slide index="2">
 	<img src="resources/02_mobile.PNG" class="img-responsive" style="margin:auto;">
   </div>
 </div>
@@ -22,33 +28,37 @@
         <div class="loading-image"><i class="fa fa-refresh"></i></div>
     </div>
     <div class="col-md-12 box-top shop-height">
-        <span class="title heading-font" ng-bind="::vm.labelService.labels.featuredProductsTitle"></span>
-		<div class="margin-top-30" ng-show="vm.products">
-			<div class="btn-group hidden-xs">
-          <!--"custom":{"label":"Custom Nutrients","state":"custom"}-->
-				<label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="'All'" uncheckable>All</label>
-        <label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="type.id" ng-repeat="type in vm.categories.slice().reverse()">{{type.name}}</label>
-        <label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="'Personalize your Nutrients'" uncheckable>Personalize your Nutrients</label>
-			</div>
-			<select ng-model="vm.selectedCategory" class="visible-xs">
-				<option value="All">All</option>
-				<option ng-repeat="type in vm.categories" value="{{type.id}}">{{type.name}}</option>
-			</select>
-		</div>
-        <div ng-if="vm.selectedCategory != 'Personalize your Nutrients'" class="col-md-3 col-sm-6 text-center product" ng-repeat="product in vm.products | productFilter: vm.selectedCategory">
-			
-          <div uib-carousel ng-if="product.relationships.files.data.length" class="productcarousel nofixed" active="product.active">
-            <div uib-slide ng-repeat="image in product.relationships.files.data" index="$index">
-            <img ng-src="{{$index == product.active?(vm.images | filter:{'id': image.id})[0].link.href:''}}" class="img-responsive img-padding" style="margin:auto;">
-            </div>
-          </div>
-          <a href="#/product/{{::product.id}}" class="product-title"><h3 ng-bind="::product.name"></h3></a>
-          <p class="small">
-          {{::product.price[0].amount | currency: '&#8377;'}}
-          </p>
-          <p ng-bind-html="::product.description" class="text-overflow-shop"></p>
-          <a href="#/product/{{::product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
+      <h1 class="font-special text-"><strong>The future of regeneration is here with us now</strong></h1>
+      <div class="margin-top-30" ng-show="vm.products">
+        <div class="btn-group hidden-xs">
+            <!--"custom":{"label":"Custom Nutrients","state":"custom"}-->
+          <label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="'Personalize your Nutrients'" uncheckable>Personalize your Nutrients</label>
+          <label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="'All'" uncheckable>All</label>
+          <label class="btn btn-default" ng-model="vm.selectedCategory" uib-btn-radio="type.id" ng-repeat="type in vm.categories.slice().reverse()">{{type.name}}</label>
         </div>
-        <div ng-if="vm.selectedCategory == 'Personalize your Nutrients'"><custom></custom></div>
+        <select ng-model="vm.selectedCategory" class="visible-xs">
+          <option value="Personalize your Nutrients">Personalize your Nutrients</option>
+          <option value="All">All</option>
+          <option ng-repeat="type in vm.categories" value="{{type.id}}">{{type.name}}</option>
+        </select>
+      </div>
+      <div class="margin-top-30">
+        <span ng-if="vm.selectedCategory != 'Personalize your Nutrients'" class="title heading-font" ng-bind="::vm.labelService.labels.featuredProductsTitle"></span>
+      </div>
+      <div ng-if="vm.selectedCategory != 'Personalize your Nutrients'" class="col-md-3 col-sm-6 text-center product" ng-repeat="product in vm.products | productFilter: vm.selectedCategory">
+    
+        <div uib-carousel ng-if="product.relationships.files.data.length" class="productcarousel nofixed" active="product.active">
+          <div uib-slide ng-repeat="image in product.relationships.files.data" index="$index">
+          <img ng-src="{{$index == product.active?(vm.images | filter:{'id': image.id})[0].link.href:''}}" class="img-responsive img-padding" style="margin:auto;">
+          </div>
+        </div>
+        <a href="#/product/{{::product.id}}" class="product-title"><h3 ng-bind="::product.name"></h3></a>
+        <p class="small">
+        {{::product.price[0].amount | currency: '&#8377;'}}
+        </p>
+        <p ng-bind-html="::product.description" class="text-overflow-shop"></p>
+        <a href="#/product/{{::product.id}}" class="btn btn-important" ng-bind="::vm.labelService.labels.buyNowButton"></a>
+      </div>
+      <div ng-if="vm.selectedCategory == 'Personalize your Nutrients'"><custom></custom></div>
     </div>
 </div>

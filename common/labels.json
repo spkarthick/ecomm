@@ -1,23 +1,23 @@
 {
     "header": {
         "items": {
+            "blog": {
+                "label": "Knowledge Center",
+                "state": "http://blog.youngandenergetic.com/",
+                "isExternal": true
+            },
             "shop": {
                 "label": "Raw Nutrients in-store",
                 "state": "shop"
-            },
-            "cart": {
-                "label": "Cart",
-                "state": "cart",
-                "class": "fa fa-shopping-cart cartItem"
             },
             "contact": {
                 "label": "Contact",
                 "state": "contact"
             },
-            "blog": {
-                "label": "Blog",
-                "state": "http://blog.youngandenergetic.com/",
-                "isExternal": true
+            "cart": {
+                "label": "Cart",
+                "state": "cart",
+                "class": "fa fa-shopping-cart cartItem"
             },
             "track": {
                 "label": "Track Order",
@@ -42,16 +42,28 @@
     "cartCheckout": "Checkout",
     "jumbotrons": [
         {
-            "title": "What we offer",
+            "title": "",
             "desc": "",
             "items": [
                 {
-                    "image": "common/images/vegtables.jpg",
-                    "desc": "</h4><h4>Value<p><o class='text-left'> You don’t walk home with a test report alone, rather you walk home with a personalized vegetable derived nutrient. On a daily basis, these nutrients would balance and rebuild your body just as it was supposed to happen in nature.</h4><h4>Simple<p><o class='text-left'>There are no diet restrictions or lifestyle modifications suggested. Let the nutrients that boost your cellular activity do their job.</h4><h4>Holistic<p><o class='text-left'> We do not perform genetic analysis subjecting you to complex details. We do a holistic cellular response test which allows us to identify which combination of vegetable derived nutrients could better your cellular activity.</h4>"
+                    "desc": "<h4>Who we are?</h4><p> Youngandenergetic (YNE) is a product of Pentagrit, a discovery research company with focus across major therapeutic areas such as tumour, metabolism, neurology and infection. We possess the skills and knowhow of disease initiation, progression and healing.</p>",
+                    "type": "full"
                 },
                 {
-                    "image": "https://docs.google.com/uc?export=open&id=0Bx5hwkjJJH6NSURJdzFzZk5PREk",
-                    "desc": "<h4>Minds<p><o class='text-left'>We look at health holistically through a broad team of Clinical Doctorates, Genetic Doctorates, Registered Dietitians, Molecular Biologist and Food Scientists.</h4><h4>Research<p><o class='text-left'> YNE is a product of Pentagrit, a disease modelling company. Since 2006 we have been learning to balance the body through natural process of vegetable derived nutrients.</h4><h4>Nutrients<p><o class='text-left'>Please use this link for the <a href='resources/vegetables.pdf' target='_blank'><u>list of vegetables</u></a> we use. We do not use industrial processes, unknown herbs, preservatives, stabilizers, or colorants. Just vegetable sources as it is supposed to be in nature.</h4>"
+                    "desc": "<h4>What we do?</h4><p>YNE focuses on using vegetable/fruit nutrients to recover and regenerate the body through the body&#39;s own recovery pathways.</p>",
+                    "type": "full"
+                },
+                {
+                    "desc": "<h4>What we offer?</h4><p>YNE offers personalized nutrients that can repair and regenerate the body.</p>",
+                    "type": "full"
+                },
+                {
+                    "desc": "<h4>How do we do it?</h4><p>YNE uses cellular response test to identify the required nutrients for each individual. The personalized nutrients are formulated and provided as a daily recommended dosage.</p>",
+                    "type": "full"
+                },
+                {
+                    "desc": "<h4>What is the science behind personalised nutrients?</h4><p class='text-left'>YNE uses the state of art methods to identify personalized nutrients and bring the below four broad changes in you step by step.<br/><b>Step 1 Digestion and Sleep</b> - Nutrients that can improve metabolism are identified that eliminate waste from the body and harmonize daily cycles.<br/><b>Step 2 Strength, Stamina and Mood</b> - Nutrient that act on muscle, bones and nervous system towards aid in targeted rebuild are identified.<br/><b>Step 3 For hormonal balance and to regulate immunity</b> - Nutrients that balance endocrine cycles are identified.<br/><b>Step 4 Anti-Aging and Beauty</b> - Nutrients that build overall regeneration and repair of the body leading to complete regeneration are identified</p>",
+                    "type": "full"
                 },
                 {
                     "desc": "<h4>How our product works</h4><ul class='container products-cure list-inline'><li><strong>Cancer</strong><div>Build Immunity to fight Tumor Cells</div></li><li><strong>Diabetes</strong><div>Promotes Regenerative of Islets</div></li><li><strong>Hives/Urticaria</strong><div>Balances Immune Response</div></li><li><strong>Fat Loss</strong><div>Eliminates Excess Fat through increased BMR</div></li><li><strong>Insomnia</strong><div>Resets Circadian Rhythm and regularizes pulmonary function</div></li><li><strong>Gastro Intestinal Disorders</strong><div>Increases Digestion Capacity</div></li><li><strong>Anti-Aging</strong><div>Eliminate cellulites and promotes regeneration</div></li><li><strong>General Wellness</strong><div>Stabilizes hormones and aids in physical activity</div></li><li><strong>Health & Fitness</strong><div>Detoxification and Body Toner</div></li><li><strong>Enhancing Stamina</strong><div>Promotes Muscle Endurance</div></li><li><strong>Anti-Fatigue</strong><div>Increases energy availability</div></li><li><strong>Bone Health</strong><div>Promotes Bone Remineralization</div></li><li><strong>Geriatrics</strong><div>Supports regeneration and energy balance</div></li><li><strong>PCOS</strong><div>Balances Hormones and Regularizes Cycle</div></li><li><strong>Skin Care</strong><div>Improves Collagen building Capacity & resistance to toxins</div></li></ul>",

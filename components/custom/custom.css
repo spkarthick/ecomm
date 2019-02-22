@@ -11,15 +11,7 @@ home .mission li{
     margin-left: 20px;
 }
 .box-top .title {
-    position: absolute;
-    top: -15px;
-    background: #fff;
-    left: 0px;
-    right: 0px;
-    margin: 0 auto;
-    z-index: 2;
     font-size: 20px;
-    width: 150px
 }
 .margin-top-50 {
     margin-top: 50px!important;

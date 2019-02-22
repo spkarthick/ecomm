@@ -7,9 +7,9 @@
         <div class="banner-blur" style="background: url({{vm.labelService.labels.bannerImage}});"></div>
     </div>
 </div>-->
-<div class="jumbotron row onsale box-default text-center mission margin-top-50" ng-repeat="item in ::vm.labelService.labels.jumbotrons">
+<div class="jumbotron row box-default text-center mission margin-top-50" ng-repeat="item in ::vm.labelService.labels.jumbotrons">
     <h3 ng-bind="::item.title"></h3>
-    <p class="space-bottom" ng-bind="::item.desc">Finding a way to serve eachother accross the world.</p>
+    <!-- <p class="space-bottom" ng-bind="::item.desc">Finding a way to serve eachother accross the world.</p> -->
     <div class="row margin-top-30" ng-repeat="desc in ::item.items">
         <div class="col-md-6 no-padding" ng-if="desc.type !=='full'" ng-class="{'col-md-push-6': $index%2 != 0}">
             <img ng-src="{{::desc.image}}">
