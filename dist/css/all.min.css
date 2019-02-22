@@ -510,6 +510,10 @@ shop img.img-padding {
 	padding: 0px 20%;
 }
 
+shop .font-special {
+    font-family: 'lucida bright';
+}
+
 .shop-height {
     min-height: 650px;
 }
